@@ -1,11 +1,19 @@
-import * as APIUtil from '../util/audiobooks_api_util.js'
+import * as APIUtil from '../util/audiobooks_api_util';
 
-export cont RECEIVE_AUDIOBOOKS = 'RECEIVE_AUDIOBOOKS'
-export cont RECEIVE_AUDIOBOOK = 'RECEIVE_AUDIOBOOK'
-export cont EDIT_AUDIOBOOKS = 'EDIT_AUDIOBOOK'
-export cont REMOVE_AUDIOBOOKS = 'REMOVE_AUDIOBOOK'
+export const RECEIVE_AUDIOBOOKS = 'RECEIVE_AUDIOBOOKS'
+export const RECEIVE_AUDIOBOOK = 'RECEIVE_AUDIOBOOK'
+export const EDIT_AUDIOBOOKS = 'EDIT_AUDIOBOOK'
+export const REMOVE_AUDIOBOOKS = 'REMOVE_AUDIOBOOK'
 
-export const receive_audiobooks = () => ({
+export const receiveAudioBooks = (audiobooks) => ({
   type: RECEIVE_AUDIOBOOKS,
-  
+  audiobooks
 })
+
+export const fetchBooks = () => dispatch => (
+  APIUtil.fetchAudioBooks().then(books => (
+    dispatch(receiveAudioBooks(books))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);

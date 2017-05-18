@@ -5,9 +5,6 @@ class Api::AudiobooksController < ApplicationController
   end
 
   def show
-    #testing
-    # @book =  Audiobook.first
-    #testing
     @book = Audiobook.find(params[:book][:id])
     render :show
   end
