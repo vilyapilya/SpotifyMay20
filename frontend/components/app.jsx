@@ -11,6 +11,7 @@ import {
 import GreetingContainer from './greeting_components/greeting_container';
 import SessionFormContainer from './session_components/SessionFormContainer.js';
 import FrontDoorContainer from './front_door_container'
+import BooksIndexContainer from './audiobooks_components/books_index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -22,6 +23,7 @@ const App = () => (
       </Link>
     </div>
     <AuthRoute exact path="/login" component={SessionFormContainer} />
+    <ProtectedRoute path="/audiobooks" component={BooksIndexContainer} />
     <AuthRoute exact path="/signup" component={SessionFormContainer} />
     <Route exact path="/frontdoor" component={FrontDoorContainer} />
  </div>
