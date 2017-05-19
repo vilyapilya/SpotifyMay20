@@ -1,0 +1,42 @@
+.booksList{
+  position: absolute;
+  width: 1000px;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+.list-cont{
+  position: relative;
+  list-style: none;
+  float: left;
+  width: 250px;
+  height: 500px;
+  margin-left: 50px;
+}
+li{
+  position: absolute;
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  list-style: none;
+  float: left;
+  width: 250px;
+  height: 300px;
+}
+
+.book-element:after{
+  display: block;
+  clear: both
+}
+.clickableTitle{
+  // position: absolute;
+  font-size: 30px;
+  text-align: left;
+  margin-top: 121%;
+  height: 50px;
+
+}
+.inf{
+  font-size: 30px;
+  text-align: left;
+  height: 50px;
+}

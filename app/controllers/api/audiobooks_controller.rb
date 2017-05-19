@@ -44,7 +44,7 @@ class Api::AudiobooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :author, :audio_url, :user_id)
+    params.require(:book).permit(:title, :author, :audio_url, :user_id, :image_url)
   end
 
 end
