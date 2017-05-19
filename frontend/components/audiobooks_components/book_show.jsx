@@ -8,22 +8,44 @@ class BookShow extends Component{
   }
 
   componentDidMount(){
-    this.props.fetchBook(this.props.match.params.id);
+
+    this.props.fetchBook(this.props.bookId);
   }
 
   componentWillReceiveProps(newProps){
-    if (newProps.match.params.id !== this.props.match.params.id) {
-     this.props.fetchBook(newProps.match.params.id);
+    if (newProps.match.params.bookId !== this.props.match.params.bookId) {
+     this.props.fetchBook(newProps.match.params.bookId);
     }
   }
 
   render(){
-    console.log(this.props.book);
-    // if (this.props.book){
-    //
-    // }
-    return <h1>HH</h1>;
-  }
+    if(this.props.book){
+      console.log(this.props);
+      console.log(this.props.book.title);
+      return (
+        <div className="show-book-cont">
+          <div className="img-show-cont">
+            { this.props.book.image_url }
+          </div>
 
+          <div className="show-book-title">
+            { this.props.book.title }
+          </div>
+
+          <div className="show-book-auth">
+            { this.props.book.author}
+          </div>
+
+          <div className="show-book-desc">
+            { this.props.book.description }
+          </div>
+
+          <div className="show-book-audio">
+            { this.props.book.audio_url }
+          </div>
+        </div>
+      );
+    }
+  }
 }
 export default BookShow;

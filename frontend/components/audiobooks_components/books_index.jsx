@@ -18,6 +18,7 @@ class BooksIndex extends Component {
    let books = this.props.books;
     let list = books.map((book, ind)=>(
       <div className="list-cont" key={ind}>
+
         <li className="book-element" >
           <div className="clickable-img">
             <NavLink to={`/audiobooks/${book.id}`}>
@@ -29,6 +30,7 @@ class BooksIndex extends Component {
               { book.title }
             </NavLink>
           </div>
+
           <div className="inf">
             { book.author }
           </div>
@@ -36,11 +38,13 @@ class BooksIndex extends Component {
             { book.audio_url }
           </div>
         </li>
+
       </div>
     ))
     return(
-      <div className="booksList">
-        <ul>
+      <div id="out">
+        <div className="page-bg"></div>
+        <ul className="booksList">
           { list }
         </ul>
       </div>

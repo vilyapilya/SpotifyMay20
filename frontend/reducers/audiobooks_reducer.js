@@ -12,9 +12,6 @@ const AudiobooksReducer = (state = {},  action) => {
       const books_array = selectAllBooks(action.audiobooks);
       books_array.forEach((book) => nextState[book.id] = book);
       return nextState;
-    case RECEIVE_AUDIOBOOK:
-      nextState = action.audiobook
-      return nextState;
     default:
       return state;
   }
