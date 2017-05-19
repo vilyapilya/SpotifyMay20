@@ -7,7 +7,7 @@ import configureStore from './store/store';
 
 //testing
 import * as APIUtil from './util/audiobooks_api_util';
-import { receiveAudioBooks, fetchBooks } from './actions/audiobooks_actions';
+import { receiveAudioBooks, fetchBook } from './actions/audiobooks_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   //TESTING
   window.store = store;
-  window.fetchAudioBooks = APIUtil.fetchAudioBooks;
+  window.fetchAudioBook = APIUtil.fetchAudioBook;
   window.receiveAudioBooks = receiveAudioBooks;
-  window.fetchBooks = fetchBooks;
+  window.fetchBook = fetchBook;
   //
   ReactDOM.render(<Root store={store} />, root);
 });

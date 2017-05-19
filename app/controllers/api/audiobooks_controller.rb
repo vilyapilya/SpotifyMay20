@@ -5,7 +5,7 @@ class Api::AudiobooksController < ApplicationController
   end
 
   def show
-    @book = Audiobook.find(params[:book][:id])
+    @book = Audiobook.find(params[:id])
     render :show
   end
 

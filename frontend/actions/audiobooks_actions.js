@@ -10,9 +10,22 @@ export const receiveAudioBooks = (audiobooks) => ({
   audiobooks
 })
 
+export const receiveAudioBook = (audiobook) => ({
+  type: RECEIVE_AUDIOBOOK,
+  audiobook
+})
+
 export const fetchBooks = () => dispatch => (
   APIUtil.fetchAudioBooks().then(books => (
     dispatch(receiveAudioBooks(books))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);
+
+export const fetchBook = (id) => dispatch => (
+  APIUtil.fetchAudioBook(id).then(book => (
+    dispatch(receiveAudioBook(book))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))

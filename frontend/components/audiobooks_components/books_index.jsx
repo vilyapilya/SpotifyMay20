@@ -17,8 +17,8 @@ class BooksIndex extends Component {
   render(){
    let books = this.props.books;
     let list = books.map((book, ind)=>(
-      <div className="list-cont">
-        <li className="book-element" key={ind}>
+      <div className="list-cont" key={ind}>
+        <li className="book-element" >
           <div className="clickable-img">
             <NavLink to={`/audiobooks/${book.id}`}>
               { book.image_url }
