@@ -20,7 +20,7 @@ const App = () => (
     <div className="top">
       <GreetingContainer />
       <Link to="/frontdoor" className="header-link">
-           <h1>Home</h1>
+           <h1>Logo</h1>
       </Link>
     </div>
     <Switch>

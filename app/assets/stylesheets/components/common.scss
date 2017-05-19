@@ -3,40 +3,60 @@
   width: 100%;
   height: 80px;
   position: fixed;
-  opacity: 0.3;
+  z-index: 9999;
 }
 .header-link{
   position: absolute;
-  margin-top: -4%;
-  margin-left: 1%;;
+  margin-left: 1%;
+  margin-top: -3%;
+  width: 150px;
+  height: 40px;
   color: white;
+  text-align: center;
+  font-size: 30px;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 .header-button{
   position: absolute;
-  margin-top: -3%;
+  margin-top: -4%;
   margin-left: 87%;
-  height: 40px;
+  height: 76px;
   width: 130px;
   font-family: 'Inconsolata', monospace;
   font-size: 25px;
-  background-color: black;
+  text-align: center;
   color: white;
   border-width: 0px;
   text-decoration: underline;
 }
 .buttons{
   margin-left: 80%;
-  margin-top: 2%;
+  padding-top: 1%;
   width: 200px;
+  height: 60px;
   font-size: 25px;
   display: flex;
-  // background-color: white;
   justify-content: space-between;
   font-family: 'Inconsolata', monospace;
 }
 .loginLink{
   color: white;
+  margin-right: 10px;
+  margin-left: -80%;
+  background-color: rgba(0, 0, 0, 0.0);
 }
 .signupLink{
   color: white;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.0);
+}
+.header-name{
+  margin-left: 10%;
+  width: 200px;
+  height: 60px;
+  text-align: center;
+  color: white;
+  padding-top: 1%;
+  font-size: 25px;
+  background-color: gray;
 }
