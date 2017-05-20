@@ -50,6 +50,7 @@ li{
   margin-left: 50%;
 }
 .Nav-bar{
+
   position: fixed;
   background-color: rgba(0,0,0,0.8);
   height: 100%;
@@ -65,4 +66,13 @@ li{
   height: 100px;
   background-color: gray;
   text-align: center;
+}
+.Logo{
+  height: 59px;
+  width: 59px;
+  margin-top: 10%;
+  margin-left: 35%;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  border-radius: 100px;
 }

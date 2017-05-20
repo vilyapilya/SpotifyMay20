@@ -41,7 +41,9 @@ class BooksIndex extends Component {
     ))
     return(
       <div id="out">
-        <nav className="Nav-bar">Vanigation</nav>
+        <NavLink to="/frontdoor" className="Nav-bar">
+          <img src="assets/book_log.jpg" className="Logo"></img>
+        </NavLink>
         <div className="Play-bar">Play bar</div>
         <ul className="booksList">
           { list }

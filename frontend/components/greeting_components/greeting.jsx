@@ -8,13 +8,14 @@ const sessionLinks = () => (
       <br/>
       <Link to="/signup" className="signupLink">Sign up</Link>
     </div>
-  
+
 );
 
 const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group">
 
-    <h2 className="header-name">Hi, {currentUser.username}!</h2>
+    <NavLink to="/audiobooks" className="header-name">Hi, {currentUser.username}!
+    </NavLink>
     <button className="header-button" onClick={logout}>Log Out</button>
 	</hgroup>
 );
