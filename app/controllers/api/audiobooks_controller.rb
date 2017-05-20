@@ -1,7 +1,6 @@
 class Api::AudiobooksController < ApplicationController
 
   def index
-    debugger
     @books = Audiobook.find(params[:user_id])
   end
 

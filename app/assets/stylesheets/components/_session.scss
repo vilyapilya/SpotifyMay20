@@ -56,10 +56,15 @@
 }
 #sess-mini-link{
   text-decoration: underline;
+  color: #0eead4;
 }
+#sess-mini-link:hover,
+#sess-mini-link:active{
+  color: #40f9e7;
+}
+
 #sessionSubmit:hover,
 #sessionSubmit:active {
-  background: rgba(0,0,0,0);
-	color: #3a7999;
-	box-shadow: inset 0 0 0 3px #3a7999;
+  background-color: #40f9e7;
+	// box-shadow: inset 0 0 0 3px #3a7999;
 }
