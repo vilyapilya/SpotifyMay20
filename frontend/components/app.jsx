@@ -17,12 +17,6 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div className="outer">
-    <div className="top">
-      <GreetingContainer />
-      <Link to="/frontdoor" className="header-link">
-           <h1>Logo</h1>
-      </Link>
-    </div>
     <Switch>
       <AuthRoute exact path="/login" component={SessionFormContainer} />
       <ProtectedRoute exact path="/audiobooks" component={BooksIndexContainer} />

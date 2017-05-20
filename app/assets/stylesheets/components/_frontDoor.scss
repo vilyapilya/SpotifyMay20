@@ -25,7 +25,8 @@
 //   //  background-size: cover;
 // }
 .style{
-  height:800px;
+  position: relative;
+  height: 200px;
   background-color: #242426;
 }
 
@@ -51,7 +52,7 @@
   text-decoration: none;
   font-family: 'Inconsolata', monospace;
   // font-family: solata;
-  color: black;
+
 }
 .frontDoorSignUp:hover,
 .frontDoorSignUp:active {
@@ -60,4 +61,8 @@
   // color: #7F6C88;
   font-family: 'Inconsolata', monospace;
   font-size: 39px;
+}
+
+.outer{
+  background-attachment: local;
 }
