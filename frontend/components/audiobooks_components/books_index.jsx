@@ -7,13 +7,24 @@ import BooksIndexContainer from './books_index_container';
 class BooksIndex extends Component {
   constructor(props){
     super(props);
-    this.state = {};
     // this.handleDelete = this.handleDelete.bind(this);
+    // this.handleAdd = this.handleAdd.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBooks();
   }
+
+  handleAdd(e){
+    e.preventDefault();
+  }
+
+  handleTitle(e){
+    e.preventDefault();
+    const title = document.getElementById("EditTitle").value;
+    this.setState({title});
+  }
+
   render(){
    let books = this.props.books;
     let list = books.map((book, ind)=>(
