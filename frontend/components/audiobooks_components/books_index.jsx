@@ -37,12 +37,12 @@ class BooksIndex extends Component {
             { book.audio_url }
           </div>
         </li>
-
       </div>
     ))
     return(
       <div id="out">
-        <div className="page-bg"></div>
+        <nav className="Nav-bar">Vanigation</nav>
+        <div className="Play-bar">Play bar</div>
         <ul className="booksList">
           { list }
         </ul>
