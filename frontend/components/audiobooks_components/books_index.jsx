@@ -2,27 +2,15 @@ import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import BooksIndexContainer from './books_index_container';
-// import BookShowContainer from './books_show_container';
+import BookCreateContainer from './book_create_container';
 
 class BooksIndex extends Component {
   constructor(props){
     super(props);
-    // this.handleDelete = this.handleDelete.bind(this);
-    // this.handleAdd = this.handleAdd.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBooks();
-  }
-
-  handleAdd(e){
-    e.preventDefault();
-  }
-
-  handleTitle(e){
-    e.preventDefault();
-    const title = document.getElementById("EditTitle").value;
-    this.setState({title});
   }
 
   render(){
@@ -58,6 +46,8 @@ class BooksIndex extends Component {
         <ul className="booksList">
           { list }
         </ul>
+        <Route path="/create" componen={ BookCreateContainer }/>
+        <NavLink to="/create" className="AddBook"> Add Book </NavLink>
       </div>
     );
   }

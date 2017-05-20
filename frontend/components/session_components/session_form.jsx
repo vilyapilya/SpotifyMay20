@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -13,9 +13,8 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    debugger
     if (nextProps.loggedIn) {
-      this.props.history.push('/audiobooks');
+      this.props.history.push('/#/audiobooks/');
     }
   }
 
@@ -52,6 +51,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className="login-form-container">
         <h2 id="header">Please {this.props.formType} or {this.navLink()}
