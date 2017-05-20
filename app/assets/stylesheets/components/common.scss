@@ -16,13 +16,16 @@
   font-size: 30px;
   background-color: rgba(0, 0, 0, 0.0);
 }
+.header-link:hover,
+.header-link:active{
+  color: #8DB0C4;
+}
 .header-button{
   position: absolute;
   margin-top: -4%;
   margin-left: 87%;
   height: 76px;
   width: 130px;
-  font-family: 'Inconsolata', monospace;
   font-size: 25px;
   text-align: center;
   color: white;
@@ -37,7 +40,7 @@
   font-size: 25px;
   display: flex;
   justify-content: space-between;
-  font-family: 'Inconsolata', monospace;
+
 }
 .loginLink{
   color: white;
@@ -45,11 +48,20 @@
   margin-left: -80%;
   background-color: rgba(0, 0, 0, 0.0);
 }
+.loginLink:hover,
+.loginLink:active{
+  color: #8DB0C4;
+}
 .signupLink{
   color: white;
   width: 200px;
   background-color: rgba(0, 0, 0, 0.0);
 }
+.signupLink:hover,
+.signupLink:active{
+  color: #8DB0C4;
+}
+
 .header-name{
   margin-left: 10%;
   width: 200px;

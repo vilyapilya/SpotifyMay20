@@ -1,7 +1,7 @@
 class Api::AudiobooksController < ApplicationController
 
   def index
-    @books = Audiobook.find(params[:user_id])
+    @books = Audiobook.all
   end
 
   def show

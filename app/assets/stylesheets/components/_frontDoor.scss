@@ -13,10 +13,10 @@
 
 .frontDoorSignUp{
   margin-left: 40%;
-  margin-top: 25%;
+  margin-top: 8%;
   position: absolute;
   border-width: 5px;
-  border: 3px solid #fff;
+  border: 3px solid black;
   border-radius: 500px;
   font-size: 16px;
   line-height: 1;
@@ -30,10 +30,13 @@
   text-decoration: none;
   font-family: 'Inconsolata', monospace;
   // font-family: solata;
-  color: white;
+  color: black;
 }
 .frontDoorSignUp:hover,
 .frontDoorSignUp:active {
-  background-color: #fff;
-  color: #000;
+  border-color: #7F6C88;
+  border-width: 9px;
+  color: #7F6C88;
+  font-family: 'Inconsolata', monospace;
+  font-size: 39px;
 }
