@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import BookShowContainer from './book_show_container';
+import NavigationBar from '../navigation_bar';
 
 class BookShow extends Component{
   constructor(props){
@@ -8,7 +9,6 @@ class BookShow extends Component{
   }
 
   componentDidMount(){
-
     this.props.fetchBook(this.props.bookId);
   }
 
@@ -20,10 +20,9 @@ class BookShow extends Component{
 
   render(){
     if(this.props.book){
-      console.log(this.props);
-      console.log(this.props.book.title);
       return (
         <div className="show-book-cont">
+          <NavigationBar></NavigationBar>
           <div className="img-show-cont">
             { this.props.book.image_url }
           </div>

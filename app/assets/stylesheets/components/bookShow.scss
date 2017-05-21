@@ -1,36 +1,32 @@
 .show-book-cont{
-  position: absolute;
-  margin-top: 5%;
-  margin-left: 23%;
-  height: 1000px;
-  width: 1000px;
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
+  position: fixed;
+  width: 100%;
 }
 
 .img-show-cont{
-  border-style: solid;
-  border-color: black;
-  border-width: 1px;
-  width: 400px;
-  height: 400px;
-  color: red;
+  position: fixed;
+  margin-left: 50%;
+  background-color: pink;
+  width: 100px;
 }
 .show-book-desc{
-  border-style: solid;
-  position: absolute;
-  border-color: red;
-  border-width: 1px;
-  height: 400px;
-  width: 600px;
-  margin-top: 2%;
+  position: fixed;
+  background-color: green;
+  margin-left: 50%;
 }
 .show-book-title{
-  position: absolute;
-  background-color: red;
-  width: 600px;
-  margin-left: 40%;
-  margin-top: -30%;
-  padding-top: 100px;
+  width: 300px;
+  margin-left: 60%;
+  background-color: gray;
+}
+.show-book-auth{
+  position: fixed;
+  background-color: orange;
+  margin-left: 30%;
+  margin-top: 20%;
+}
+.show-book-audio{
+  margin-left: 30%;
+  margin-top: 40%;
+  background-color: violet;
 }

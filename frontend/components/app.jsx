@@ -21,7 +21,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={SessionFormContainer} />
       <ProtectedRoute exact path="/audiobooks" component={BooksIndexContainer} />
-      <Route exact path="/audiobooks/:bookId" component={BookShowContainer} />
+      <ProtectedRoute exact path="/audiobooks/:bookId" component={BookShowContainer} />
       <AuthRoute exact path="/signup" component={SessionFormContainer} />
       <Route exact path="/frontdoor" component={FrontDoorContainer} />
       <Route exact path="/create" component={ BookCreateContainer }/>

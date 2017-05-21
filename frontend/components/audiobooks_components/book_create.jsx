@@ -62,8 +62,8 @@ class BookCreate extends Component {
           </input>
           <br/>
 
-          <h1 id="AddDesc"> description </h1>
-          <textarea id="body" value={this.state.description}
+          <h1 id="Desc"> description </h1>
+          <textarea id="AddDesc" value={this.state.description}
             onChange={this.handleDescription} className="CreateForm">
           </textarea>
 
