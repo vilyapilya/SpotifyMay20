@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import BooksIndexContainer from './books_index_container';
 import BookCreateContainer from './book_create_container';
+import NavigationBar from '../navigation_bar';
 
 class BooksIndex extends Component {
   constructor(props){
@@ -41,9 +42,7 @@ class BooksIndex extends Component {
     ))
     return(
       <div id="out">
-        <NavLink to="/frontdoor" className="Nav-bar">
-          <img src="assets/book_log.jpg" className="Logo"></img>
-        </NavLink>
+        <NavigationBar></NavigationBar>
         <div className="Play-bar">Play bar</div>
         <ul className="booksList">
           { list }

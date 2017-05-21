@@ -52,7 +52,7 @@ li{
 .Nav-bar{
 
   position: fixed;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgb(68, 68, 79);
   height: 100%;
   width: 200px;
   text-align: center;
@@ -75,4 +75,41 @@ li{
   -webkit-filter: invert(100%);
   filter: invert(100%);
   border-radius: 100px;
+}
+.YourCollection{
+  position: absolute;
+  margin-top: 15%;
+  margin-left: -50%;
+  width: 100%;
+  padding-top: 5px;
+  border-top: 1px #747E8A solid;
+  color: #DEE2EB;
+
+}
+.FriendsCollection{
+  position: absolute;
+  margin-left: -50%;
+  margin-top: 50%;
+  width: 100%;
+  padding-top: 5px;
+  border-top: 1px #747E8A solid;
+  color: #DEE2EB;
+}
+
+.YourCollection:hover,
+.YourCollection:active{
+  color: white;
+}
+.FriendsCollection:hover,
+.FriendsCollection:active{
+  color: white;
+}
+
+#usersName{
+  position: absolute;
+  margin-top: 245%;
+  width: 100%;
+  color: #DEE2EB;
+  padding-top: 7px;
+  border-top: 1px #747E8A solid;
 }
