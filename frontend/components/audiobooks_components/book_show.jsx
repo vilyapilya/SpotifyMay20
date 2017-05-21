@@ -23,16 +23,17 @@ class BookShow extends Component{
       return (
         <div className="show-book-cont">
           <NavigationBar></NavigationBar>
-          <div className="img-show-cont">
-            { this.props.book.image_url }
-          </div>
-
-          <div className="show-book-title">
-            { this.props.book.title }
-          </div>
-
-          <div className="show-book-auth">
-            { this.props.book.author}
+          <div className="TitleAuth">
+            <div className="img-show-cont">
+              { this.props.book.image_url }
+            </div>
+            <div className="show-book-title">
+              { this.props.book.title }
+            </div>
+            <div className="show-book-auth">
+              <h4 id="by">by</h4>
+              { this.props.book.author}
+            </div>
           </div>
 
           <div className="show-book-desc">
@@ -41,6 +42,10 @@ class BookShow extends Component{
 
           <div className="show-book-audio">
             { this.props.book.audio_url }
+          </div>
+
+          <div className="PlayButton">
+            Play
           </div>
         </div>
       );
