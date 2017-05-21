@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Redirect } from 'react-router-dom';
 import BookShowContainer from './book_show_container';
 import NavigationBar from '../navigation_bar';
 
 class BookShow extends Component{
   constructor(props){
     super(props);
+    this.state = {};
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
@@ -18,6 +20,11 @@ class BookShow extends Component{
     }
   }
 
+  handleDelete(e, id){
+    e.preventDefault();
+    this.props.deleteBook(id)
+    .then((book)=>{this.props.history.push("/audiobooks")});
+  }
   render(){
     if(this.props.book){
       return (
@@ -46,6 +53,12 @@ class BookShow extends Component{
 
           <div className="PlayButton">
             Play
+          </div>
+
+          <div className="Delete">
+            <button onClick={(e) => this.handleDelete(e,this.props.book.id)}>
+              Delete
+            </button>
           </div>
         </div>
       );

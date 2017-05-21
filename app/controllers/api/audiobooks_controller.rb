@@ -19,9 +19,9 @@ class Api::AudiobooksController < ApplicationController
   end
 
   def destroy
-    @book = Audiobook.find(params[:book][:id])
+    @book = Audiobook.find(params[:id])
     if @book.destroy
-      render :index
+      render :show
     else
       render json: ["here is nothing to delete"]
     end

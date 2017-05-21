@@ -3,7 +3,7 @@ import * as APIUtil from '../util/audiobooks_api_util';
 export const RECEIVE_AUDIOBOOKS = 'RECEIVE_AUDIOBOOKS'
 export const RECEIVE_AUDIOBOOK = 'RECEIVE_AUDIOBOOK'
 export const EDIT_AUDIOBOOKS = 'EDIT_AUDIOBOOK'
-export const REMOVE_AUDIOBOOKS = 'REMOVE_AUDIOBOOK'
+export const REMOVE_AUDIOBOOK = 'REMOVE_AUDIOBOOK'
 export const ADD_AUDIOBOOK = 'ADD_AUDIOBOOK'
 
 export const receiveAudioBooks = (audiobooks) => ({
@@ -21,7 +21,18 @@ export const addAudioBook = (audiobook) => ({
   audiobook
 })
 
+export const deleteAudioBook = (audiobook) => ({
+  type: REMOVE_AUDIOBOOK,
+  audiobook
+})
 
+export const deleteBook = (id) => dispatch =>(
+  APIUtil.deleteAudioBook(id).then(book => (
+    dispatch(deleteAudioBook(book))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);
 export const addBook = (audiobook) => dispatch =>(
   APIUtil.createAudioBook(audiobook).then(book =>(
     dispatch(addAudioBook(book))

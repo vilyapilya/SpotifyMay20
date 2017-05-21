@@ -22,9 +22,8 @@ export const createAudioBook = book => (
 );
 export const deleteAudioBook = id => (
   $.ajax({
-    method: 'DELTE',
-    url: `api/audiobooks/${id}`,
-    data
+    method: 'DELETE',
+    url: `api/audiobooks/${id}`
   })
 );
 export const editAudioBook = data => (
