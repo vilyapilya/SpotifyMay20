@@ -1,12 +1,15 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom';
+import SearchContainer from './search_components/search_container';
+import { selectAllBooks } from '../reducers/selectors'
 
 class NavigationBar extends Component{
 
   render(){
     return(
       <div className="Nav-bar">
+        <SearchContainer></SearchContainer>
         <NavLink to="/frontdoor" >
           <img src="assets/book_log.jpg" className="Logo"></img>
         </NavLink>

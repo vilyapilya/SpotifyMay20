@@ -19,7 +19,6 @@ class BooksIndex extends Component {
    let books = this.props.books;
     let list = books.map((book, ind)=>(
       <div className="list-cont" key={ind}>
-
         <li className="book-element" >
           <div className="clickable-img">
             <NavLink to={`/audiobooks/${book.id}`}>
@@ -48,7 +47,6 @@ class BooksIndex extends Component {
         <ul className="booksList">
           { list }
         </ul>
-        <Route path="/create" componen={ BookCreateContainer }/>
         <NavLink to="/create" className="AddBook"> Add Book </NavLink>
       </div>
     );
