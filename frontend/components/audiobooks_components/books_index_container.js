@@ -4,12 +4,14 @@ import BooksIndex from './books_index';
 import { fetchBooks } from '../../actions/audiobooks_actions';
 import { selectAllBooks } from '../../reducers/selectors';
 
-const mapStateToProps = (state) => ({
-  books: selectAllBooks(state.audiobooks)
-});
+const mapStateToProps = (state) => {{
+  const books = selectAllBooks(state.audiobooks);
+  const user_id = state.session.currentUser.id;
+  return {books, user_id};
+}};
 
 const mapDispatchToProps = dispatch => ({
-  fetchBooks: () => dispatch(fetchBooks())
+  fetchBooks: (user_id) => dispatch(fetchBooks(user_id))
 });
 
 export default connect(

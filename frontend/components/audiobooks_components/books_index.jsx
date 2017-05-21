@@ -11,7 +11,8 @@ class BooksIndex extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchBooks();
+    const user_id = this.props.user_id;
+    this.props.fetchBooks(user_id);
   }
 
   render(){

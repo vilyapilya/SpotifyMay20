@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 
-class NavigationBar extends Component {
+class NavigationBar extends Component{
 
   render(){
     return(

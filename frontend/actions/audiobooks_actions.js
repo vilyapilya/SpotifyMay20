@@ -30,8 +30,8 @@ export const addBook = (audiobook) => dispatch =>(
   ))
 );
 
-export const fetchBooks = () => dispatch => (
-  APIUtil.fetchAudioBooks().then(books => (
+export const fetchBooks = (user_id) => dispatch => (
+  APIUtil.fetchAudioBooks(user_id).then(books => (
     dispatch(receiveAudioBooks(books))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))

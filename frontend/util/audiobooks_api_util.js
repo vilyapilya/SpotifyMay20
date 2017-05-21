@@ -1,8 +1,8 @@
-export const fetchAudioBooks = book => (
+export const fetchAudioBooks = user_id => (
   $.ajax({
     method: 'GET',
     url: 'api/audiobooks',
-    data: book
+    data: {user_id}
   })
 );
 
