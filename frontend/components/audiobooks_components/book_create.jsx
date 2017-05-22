@@ -30,7 +30,7 @@ class BookCreate extends Component {
 
   uploadAudio(e){
     e.preventDefault();
-    
+
   }
 
   handleAdd(e){
@@ -102,8 +102,8 @@ class BookCreate extends Component {
           <button id="bookCreateButton">
             add audiobook
           </button>
-          <button onClick={this.uploadAudio}>upload audio</button>
-          <button onClick={this.upload}>Upload Image</button>
+          <button onClick={this.uploadAudio} className="uploadAudio">upload audio</button>
+          <button onClick={this.upload} className="uploadImg">upload image</button>
           <NavLink to="/audiobooks" id="cancel"> cancel </NavLink>
     </form>
     )

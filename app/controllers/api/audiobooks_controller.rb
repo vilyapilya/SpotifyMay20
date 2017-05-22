@@ -41,6 +41,15 @@ class Api::AudiobooksController < ApplicationController
     end
   end
 
+  def search
+    if params[:query].present?
+      @books = Audiobook.where("title ~ ?", params[:query])
+      render :index
+    else
+      @books = Audiobook.none
+    end
+  end
+
   private
 
   def book_params

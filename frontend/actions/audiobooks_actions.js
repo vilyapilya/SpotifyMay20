@@ -5,6 +5,7 @@ export const RECEIVE_AUDIOBOOK = 'RECEIVE_AUDIOBOOK'
 export const EDIT_AUDIOBOOKS = 'EDIT_AUDIOBOOK'
 export const REMOVE_AUDIOBOOK = 'REMOVE_AUDIOBOOK'
 export const ADD_AUDIOBOOK = 'ADD_AUDIOBOOK'
+export const SEARCH_AUDIOBOOKS = 'SEARCH_AUDIOBOOKS'
 
 export const receiveAudioBooks = (audiobooks) => ({
   type: RECEIVE_AUDIOBOOKS,
@@ -30,6 +31,19 @@ export const editAudioBook = (audiobook) => ({
   type: EDIT_AUDIOBOOKS,
   audiobook
 })
+
+export const searchAudioBooks = (audiobooks) =>({
+  type: SEARCH_AUDIOBOOKS,
+  audiobooks
+})
+
+export const searchBook = (query) => dispatch => (
+  APIUtil.searchAudioBooks(query).then(books => (
+    dispatch(searchAudioBooks(books))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);
 
 export const editBook = (audiobook) => dispatch => (
   APIUtil.editAudioBook(audiobook).then(book => (

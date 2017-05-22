@@ -7,7 +7,7 @@ import configureStore from './store/store';
 
 //testing
 import * as APIUtil from './util/audiobooks_api_util';
-import { deleteBook } from './actions/audiobooks_actions';
+import { searchBook } from './actions/audiobooks_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   //TESTING
   window.store = store;
-  window.deleteAudioBook = APIUtil.deleteAudioBook;
-  window.deleteBook = deleteBook;
+  window.searchAudioBooks = APIUtil.searchAudioBooks;
+  window.searchBook = searchBook;
   //
   ReactDOM.render(<Root store={store} />, root);
 });

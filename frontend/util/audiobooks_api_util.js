@@ -1,3 +1,12 @@
+export const searchAudioBooks = query =>(
+  $.ajax({
+     url: "api/audiobooks/search",
+     dataType: "json",
+     method: "GET",
+     data: { query }
+   })
+);
+
 export const fetchAudioBooks = user_id => (
   $.ajax({
     method: 'GET',

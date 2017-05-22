@@ -1,14 +1,18 @@
 import { connect } from 'react-redux';
-
-import { login, logout, signup } from '../../actions/session_actions';
-import Search from './search';
+import { searchBook } from '../../actions/audiobooks_actions';
 import { selectAllBooks } from '../../reducers/selectors';
 
-const mapStateToProps = (state) => ({
-  books: selectAllBooks(state.audiobooks)
+import BookSearch from './search';
+
+const mapStateToProps = (state) => {(
+  const books = selectAllBooks(state.audiobooks);
+)};
+
+const mapDispatchToProps = dispatch => ({
+  searchBook: (query) => dispatch(searchBook(query))
 });
 
 export default connect(
   mapStateToProps,
-  null
-)(Search);
+  mapDispatchToProps
+)(BookSearch);

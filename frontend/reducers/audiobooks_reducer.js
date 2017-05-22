@@ -1,8 +1,12 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_AUDIOBOOKS, RECEIVE_AUDIOBOOK,
-  ADD_AUDIOBOOK, REMOVE_AUDIOBOOK,
-   EDIT_AUDIOBOOKS} from '../actions/audiobooks_actions';
+import {
+  RECEIVE_AUDIOBOOKS,
+  RECEIVE_AUDIOBOOK,
+  ADD_AUDIOBOOK,
+  REMOVE_AUDIOBOOK,
+  EDIT_AUDIOBOOKS,
+  SEARCH_AUDIOBOOKS} from '../actions/audiobooks_actions';
 
 import { selectAllBooks } from './selectors';
 
@@ -26,6 +30,11 @@ const AudiobooksReducer = (state = {},  action) => {
     case EDIT_AUDIOBOOKS:
       nextState = merge({}, state);
       nextState[action.audiobook.id] = action.audiobook;
+      return nextState;
+    case SEARCH_AUDIOBOOKS:
+      nextState = action.audiobooks;
+      const found_books = selectAllBooks(action.audiobooks);
+      found_books.forEach((book) => nextState[book.id] = book);
       return nextState;
     default:
       return state;

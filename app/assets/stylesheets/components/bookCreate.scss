@@ -34,13 +34,28 @@
   border-width: 2px;
   border-radius: 7px;
 }
+.uploadImg{
+  position: fixed;
+  margin-top: 50px;
+  margin-left: -200px;
+  font-size: 20px;
+  color: blue;
+}
+.uploadAudio{
+  position: fixed;
+  margin-top: 20px;
+  margin-left: -200px;
+  font-size: 20px;
+  color: blue;
+}
 #bookCreateButton{
   border: 1px black solid;
   border-radius: 20px;
-  width: 100%;
+  margin-left: -30%;
+  width: 50%;
 }
 #cancel{
   border: 1px black solid;
   border-radius: 20px;
-  width: 100%;
+  width: 500px;
 }
