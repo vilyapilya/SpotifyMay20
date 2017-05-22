@@ -1,7 +1,8 @@
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
+import BooksIndex from '../audiobooks_components/books_index';
 
-class BookSearch{
+class BookSearch extends Component{
   constructor(props){
     super(props);
     this.state = {title: ""};
@@ -11,18 +12,16 @@ class BookSearch{
   handleTitleInput(e){
     e.preventDefault();
     const title = document.getElementById("TitleSearch").value;
-    if (title === "") {
-      this.renderResults([]);
-      return;
+    if (title !== "") {
+      this.props.searchBook(title).then((books) => (<BooksIndex></BooksIndex>));
     }
-
-    this.setState({title});
   }
 
   render(){
     return(
-      <input type="text" id="TitleSearch" onChange={handleTitleInput}></input>
+      <input type="text" id="TitleSearch" onChange={this.handleTitleInput}></input>
     )
   }
 
 }
+export default BookSearch;

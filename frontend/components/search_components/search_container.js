@@ -4,9 +4,9 @@ import { selectAllBooks } from '../../reducers/selectors';
 
 import BookSearch from './search';
 
-const mapStateToProps = (state) => {(
-  const books = selectAllBooks(state.audiobooks);
-)};
+const mapStateToProps = (state) => ({
+  books: selectAllBooks(state.audiobooks)
+});
 
 const mapDispatchToProps = dispatch => ({
   searchBook: (query) => dispatch(searchBook(query))
