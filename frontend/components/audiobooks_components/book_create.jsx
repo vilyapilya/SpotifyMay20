@@ -16,7 +16,6 @@ class BookCreate extends Component {
   }
 
   upload(e){
-    debugger
     e.preventDefault();
     cloudinary.openUploadWidget(
       window.cloudinary_options,
@@ -27,6 +26,11 @@ class BookCreate extends Component {
           this.setState({image_url: images[0].url});
         }
       }.bind(this));
+  }
+
+  uploadAudio(e){
+    e.preventDefault();
+    
   }
 
   handleAdd(e){
@@ -98,6 +102,7 @@ class BookCreate extends Component {
           <button id="bookCreateButton">
             add audiobook
           </button>
+          <button onClick={this.uploadAudio}>upload audio</button>
           <button onClick={this.upload}>Upload Image</button>
           <NavLink to="/audiobooks" id="cancel"> cancel </NavLink>
     </form>

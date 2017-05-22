@@ -81,7 +81,10 @@
   background-color: blue;
   margin-left: 50%;
 }
-
+.ShowImg{
+  position: absolute;
+  background-size: contain;
+}
 #by{
   display: flex;
   margin-top: 1px;

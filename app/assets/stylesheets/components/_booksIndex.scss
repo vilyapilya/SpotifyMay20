@@ -54,12 +54,13 @@ li{
 }
 
 .Play-bar{
-  margin-top: 47%;
   position: fixed;
+  margin-top: 42%;
   width: 100%;
   height: 100px;
   background-color: gray;
   text-align: center;
+  z-index: 9999;
 }
 .Logo{
   height: 59px;
@@ -98,10 +99,22 @@ li{
 .FriendsCollection:active{
   color: white;
 }
+.clickable-img{
+  background-color: pink;
+}
+.IndImg{
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 #usersName{
   position: absolute;
-  margin-top: 245%;
+  margin-top: 230%;
   width: 100%;
   color: #DEE2EB;
   padding-top: 7px;
