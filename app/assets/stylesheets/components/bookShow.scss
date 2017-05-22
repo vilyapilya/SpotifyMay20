@@ -57,11 +57,32 @@
   border-radius: 30px;
 }
 
-.Delete{
-  background-color: pink;
-  margin-left: 40%;
-  width: 300px;
+.Dots{
+  position: absolute;
+  margin-left: 350px;
+  width: 50px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 40px;
+  outline:none;
 }
+.Dots:focus + .Menue{
+  background-color: green;
+}
+.Menue{
+  background-color: brown;
+}
+.DeleteButton{
+  position: absolute;
+  margin-left: 50%;
+  width: 100%;
+  background-color: pink;
+}
+.EditButton{
+  background-color: blue;
+  margin-left: 50%;
+}
+
 #by{
   display: flex;
   margin-top: 1px;

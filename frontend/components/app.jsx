@@ -14,6 +14,7 @@ import FrontDoorContainer from './front_door_container'
 import BooksIndexContainer from './audiobooks_components/books_index_container';
 import BookShowContainer from './audiobooks_components/book_show_container';
 import BookCreateContainer from './audiobooks_components/book_create_container';
+import BookEditContainer from './audiobooks_components/book_edit_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SessionFormContainer} />
       <Route exact path="/frontdoor" component={FrontDoorContainer} />
       <Route exact path="/create" component={ BookCreateContainer }/>
+      <Route path="/audiobooks/:bookId/edit" component={BookEditContainer}/>
     </Switch>
  </div>
 );

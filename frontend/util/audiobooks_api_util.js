@@ -26,10 +26,10 @@ export const deleteAudioBook = id => (
     url: `api/audiobooks/${id}`
   })
 );
-export const editAudioBook = data => (
+export const editAudioBook = book => (
   $.ajax({
     method: 'PATCH',
-    url: 'api/audiobooks/',
-    data
+    url: `api/audiobooks/${book.id}`,
+    data:  {book}
   })
 );

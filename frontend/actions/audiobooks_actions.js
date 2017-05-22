@@ -26,6 +26,19 @@ export const deleteAudioBook = (audiobook) => ({
   audiobook
 })
 
+export const editAudioBook = (audiobook) => ({
+  type: EDIT_AUDIOBOOKS,
+  audiobook
+})
+
+export const editBook = (audiobook) => dispatch => (
+  APIUtil.editAudioBook(audiobook).then(book => (
+    dispatch(editAudioBook(book))
+  ), err => (
+    dispatch(receiveErrors(err.responseJSON))
+  ))
+);
+
 export const deleteBook = (id) => dispatch =>(
   APIUtil.deleteAudioBook(id).then(book => (
     dispatch(deleteAudioBook(book))

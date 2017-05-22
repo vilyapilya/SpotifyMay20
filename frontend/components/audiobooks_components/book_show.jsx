@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Route, withRouter, Redirect } from 'react-router-dom';
+import { Route, withRouter, Redirect, NavLink } from 'react-router-dom';
 import BookShowContainer from './book_show_container';
 import NavigationBar from '../navigation_bar';
+import BookEditContainer from './book_edit_container';
 
 class BookShow extends Component{
   constructor(props){
@@ -55,11 +56,15 @@ class BookShow extends Component{
             Play
           </div>
 
-          <div className="Delete">
-            <button onClick={(e) => this.handleDelete(e,this.props.book.id)}>
-              Delete
-            </button>
-          </div>
+          <div className="Dots">...</div>
+            <div className="Menue">
+                <button onClick={(e) => this.handleDelete(e,this.props.book.id)}
+                  className="DeleteButton">
+                  Delete
+                </button>
+                <br/>
+                <NavLink to={`/audiobooks/${this.props.book.id}/edit`} className="EditButton" key={this.props.book.id}>Edit</NavLink>
+            </div>
         </div>
       );
     }

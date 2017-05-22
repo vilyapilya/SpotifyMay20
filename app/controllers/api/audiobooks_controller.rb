@@ -33,7 +33,7 @@ class Api::AudiobooksController < ApplicationController
   end
 
   def update
-    @book = Audiobook.find(params[:book][:id])
+    @book = Audiobook.find(params[:id])
     if @book.update(book_params)
       render :show
     else
