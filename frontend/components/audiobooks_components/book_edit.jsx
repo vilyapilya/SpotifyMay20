@@ -26,7 +26,7 @@ class BookEdit extends Component {
     this.handleAuthor = this.handleAuthor.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
     this.handleAudioURL = this.handleAudioURL.bind(this);
-    this.handleImageURL = this.handleImageURL.bind(this);
+    this.upload = this.upload.bind(this);
   }
 
   handleEdit(e){
@@ -64,6 +64,19 @@ class BookEdit extends Component {
     const image_url = document.getElementById("EditImageURL").value;
     this.setState({image_url});
   }
+  upload(e){
+    debugger
+    e.preventDefault();
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      function(error, images){
+        debugger
+        const image_url = images[0].url;
+        if(error === null){
+          this.setState({image_url: images[0].url});
+        }
+      }.bind(this));
+  }
 
   render(){
     return(
@@ -94,13 +107,7 @@ class BookEdit extends Component {
             onChange={this.handleAudioURL} className="CreateForm">
           </input>
           <br/>
-
-          <h1 id="ImageUrl"> Image </h1>
-          <input type="text" id="EditImageURL" value={this.state.image_url}
-            onChange={this.handleImageURL} className="CreateForm">
-          </input>
-          <br/>
-
+          <button onClick={this.upload}>upload a different image</button>
           <button id="bookCreateButton">
             add audiobook
           </button>
