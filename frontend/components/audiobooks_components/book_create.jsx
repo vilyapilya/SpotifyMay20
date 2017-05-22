@@ -12,7 +12,21 @@ class BookCreate extends Component {
     this.handleAuthor = this.handleAuthor.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
     this.handleAudioURL = this.handleAudioURL.bind(this);
-    this.handleImageURL = this.handleImageURL.bind(this);
+    this.upload = this.upload.bind(this);
+  }
+
+  upload(e){
+    debugger
+    e.preventDefault();
+    cloudinary.openUploadWidget(
+      window.cloudinary_options,
+      function(error, images){
+        debugger
+        const image_url = images[0].url;
+        if(error === null){
+          this.setState({image_url: images[0].url});
+        }
+      }.bind(this));
   }
 
   handleAdd(e){
@@ -81,15 +95,10 @@ class BookCreate extends Component {
           </input>
           <br/>
 
-          <h1 id="ImageUrl"> Image </h1>
-          <input type="text" id="AddImageURL" value={this.state.image_url}
-            onChange={this.handleImageURL} className="CreateForm">
-          </input>
-          <br/>
-
           <button id="bookCreateButton">
             add audiobook
           </button>
+          <button onClick={this.upload}>Upload Image</button>
           <NavLink to="/audiobooks" id="cancel"> cancel </NavLink>
     </form>
     )

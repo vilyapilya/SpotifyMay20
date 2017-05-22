@@ -22,7 +22,8 @@ class BooksIndex extends Component {
         <li className="book-element" >
           <div className="clickable-img">
             <NavLink to={`/audiobooks/${book.id}`}>
-              { book.image_url }
+              <img src={book.image_url}/>
+
             </NavLink>
           </div>
           <div className="clickableTitle">

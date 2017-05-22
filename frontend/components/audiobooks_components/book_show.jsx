@@ -33,7 +33,8 @@ class BookShow extends Component{
           <NavigationBar></NavigationBar>
           <div className="TitleAuth">
             <div className="img-show-cont">
-              { this.props.book.image_url }
+              <img src={this.props.book.image_url}>
+              </img>
             </div>
             <div className="show-book-title">
               { this.props.book.title }
