@@ -3,6 +3,7 @@ import { Route, withRouter, Redirect, NavLink } from 'react-router-dom';
 import BookShowContainer from './book_show_container';
 import NavigationBar from '../navigation_bar';
 import BookEditContainer from './book_edit_container';
+import Player from '../player';
 
 class BookShow extends Component{
   constructor(props){
@@ -31,6 +32,7 @@ class BookShow extends Component{
       return (
         <div className="show-book-cont">
           <NavigationBar></NavigationBar>
+          <Player book={this.props.book}></Player>
           <div className="TitleAuth">
             <div className="img-show-cont">
               <img src={this.props.book.image_url} className="ShowImg"/>

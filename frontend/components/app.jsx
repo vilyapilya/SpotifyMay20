@@ -22,7 +22,6 @@ import Player from './player';
 
 const App = () => (
   <div className="outer">
-    <Player></Player>
     <Switch>
       <AuthRoute exact path="/login" component={SessionFormContainer} />
       <ProtectedRoute exact path="/audiobooks" component={BooksIndexContainer} />

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
-import { PlayButton, PauseButton } from 'react-player-controls';
+import { PlayButton, PauseButton, ProgressBar } from 'react-player-controls';
 
 class Player extends Component {
   constructor(props){
@@ -17,10 +17,15 @@ class Player extends Component {
   }
 
   render () {
+    let audioUrl = this.props.book.audioFile_url;
+    // if(audioUrl){
+    //   audioUrl = audioUrl.substring(0, audioUrl.indexOf('?'));
+    //   audioUrl = "https" + audioUrl.slice(4);
+    // }
     return (
     <div>
       <ReactPlayer
-      url='https://s3-us-west-1.amazonaws.com/project-dev/audiobooks/audios/000/000/003/original/True_Stories.mp3'
+      url={audioUrl}
       className="Player"
       height="80px"
       width="100%"
@@ -28,6 +33,7 @@ class Player extends Component {
       />
     <PauseButton onClick={this.pauseHandler}/>
     <PlayButton isEnabled={true} onClick={this.playHandler} />
+    <ProgressBar></ProgressBar>
   </div>
   );
   }

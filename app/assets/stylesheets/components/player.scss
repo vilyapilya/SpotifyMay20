@@ -18,13 +18,13 @@
 }
 .PauseButton{
   position: fixed;
-  left: 60%;
+  left: 48%;
   bottom: 25px;
   z-index: 9999;
 
-   width: 4px;
-   height: 16px;
-   border-right: 15px solid #DEE2EB;
-   border-left: 15px solid #DEE2EB;
+  width: 4px;
+  height: 30px;
+  border-right: 5px solid #DEE2EB;
+  border-left: 5px solid #DEE2EB;
 
 }
