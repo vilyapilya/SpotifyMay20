@@ -26,7 +26,9 @@ export const createAudioBook = book => (
   $.ajax({
     method: 'POST',
     url: 'api/audiobooks',
-    data: {book}
+    data: book,
+    contentType: false,
+    processData: false
   })
 );
 export const deleteAudioBook = id => (

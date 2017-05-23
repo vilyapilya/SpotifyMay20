@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   //TESTING
+  window.createAudioBook = APIUtil.createAudioBook;
   window.store = store;
   window.searchAudioBooks = APIUtil.searchAudioBooks;
   window.searchBook = searchBook;

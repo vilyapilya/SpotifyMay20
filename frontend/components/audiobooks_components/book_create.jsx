@@ -6,13 +6,13 @@ class BookCreate extends Component {
     super(props);
     this.user_id = parseInt(this.props.user_id);
     this.state = {title: "", author: "", description: "", audio_url: "",
-    image_url: "", user_id: this.user_id};
+    image_url: "", user_id: this.user_id, audio: ""};
     this.handleAdd = this.handleAdd.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
     this.handleAuthor = this.handleAuthor.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
-    this.handleAudioURL = this.handleAudioURL.bind(this);
     this.upload = this.upload.bind(this);
+    this.updateFile = this.updateFile.bind(this);
   }
 
   upload(e){
@@ -27,14 +27,17 @@ class BookCreate extends Component {
       }.bind(this));
   }
 
-  uploadAudio(e){
-    e.preventDefault();
-
-  }
-
   handleAdd(e){
     e.preventDefault();
-    this.props.bookCreate(this.state)
+    var formData = new FormData();
+    formData.append("book[user_id]", this.state.user_id);
+    formData.append("book[title]", this.state.title);
+    formData.append("book[audio]", this.state.audio);
+    formData.append("book[author]", this.state.author);
+    formData.append("book[description]", this.state.description);
+    formData.append("book[image_url]", this.state.image_url);
+
+    this.props.bookCreate(formData)
     .then((book)=>{this.props.history.push("/audiobooks")});
   }
 
@@ -56,16 +59,21 @@ class BookCreate extends Component {
     this.setState({description});
   }
 
-  handleAudioURL(e){
-    e.preventDefault();
-    const audio_url = document.getElementById("AddAudioURL").value;
-    this.setState({audio_url});
-  }
-
   handleImageURL(e){
     e.preventDefault();
     const image_url = document.getElementById("AddImageURL").value;
     this.setState({image_url});
+  }
+
+  updateFile(e){
+    var file = e.currentTarget.files[0];
+    var fileReader = new FileReader();
+    fileReader.onloadend = function(){
+      this.setState({audio_url: fileReader.result, audio: file})
+    }.bind(this);
+    if (file){
+      fileReader.readAsDataURL(file);
+    }
   }
 
   render(){
@@ -93,10 +101,8 @@ class BookCreate extends Component {
           <br/>
 
           <h1 id="AudioUrl"> AudioFile </h1>
-          <input type="text" id="AddAudioURL" value={this.state.audio_url}
-            onChange={this.handleAudioURL} className="CreateForm">
-          </input>
-          <br/>
+
+          <input type="file" onChange={this.updateFile}></input>
 
           <button className="bookCreateButton">
             add audiobook
