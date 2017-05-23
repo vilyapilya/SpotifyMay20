@@ -16,9 +16,13 @@ import BookShowContainer from './audiobooks_components/book_show_container';
 import BookCreateContainer from './audiobooks_components/book_create_container';
 import BookEditContainer from './audiobooks_components/book_edit_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import Player from './player';
+
+
 
 const App = () => (
   <div className="outer">
+    <Player></Player>
     <Switch>
       <AuthRoute exact path="/login" component={SessionFormContainer} />
       <ProtectedRoute exact path="/audiobooks" component={BooksIndexContainer} />

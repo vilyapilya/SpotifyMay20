@@ -32,7 +32,7 @@ class BookShow extends Component{
         <div className="show-book-cont">
           <NavigationBar></NavigationBar>
           <div className="TitleAuth">
-            <div className="img-show-cont">  
+            <div className="img-show-cont">
               <img src={this.props.book.image_url} className="ShowImg"/>
             </div>
             <div className="show-book-title">
@@ -47,11 +47,6 @@ class BookShow extends Component{
           <div className="show-book-desc">
             { this.props.book.description }
           </div>
-
-          <div className="PlayButton">
-            Play
-          </div>
-
           <div className="Dots">...
             <div className="Menue">
               <button onClick={(e) => this.handleDelete(e,this.props.book.id)}

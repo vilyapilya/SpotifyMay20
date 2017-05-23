@@ -43,7 +43,6 @@ class BooksIndex extends Component {
     return(
       <div id="out">
         <NavigationBar></NavigationBar>
-        <div className="Play-bar">Play bar</div>
         <ul className="booksList">
           { list }
         </ul>

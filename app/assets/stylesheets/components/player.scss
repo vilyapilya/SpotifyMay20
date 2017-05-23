@@ -1,0 +1,30 @@
+.Player{
+  position: fixed;
+  bottom: 4px;
+  background-color: rgba(0,0,0, 0.8);
+  text-align: center;
+  z-index: 9999;
+}
+.PlayButton{
+  position: fixed;
+  left: 50%;
+  bottom: 25px;
+  z-index: 9999;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 15px 0 15px 30px;
+  border-color: transparent transparent transparent #DEE2EB;
+}
+.PauseButton{
+  position: fixed;
+  left: 60%;
+  bottom: 25px;
+  z-index: 9999;
+
+   width: 4px;
+   height: 16px;
+   border-right: 15px solid #DEE2EB;
+   border-left: 15px solid #DEE2EB;
+
+}
