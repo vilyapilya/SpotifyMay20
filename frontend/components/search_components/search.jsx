@@ -19,7 +19,10 @@ class BookSearch extends Component{
 
   render(){
     return(
-      <input type="text" id="TitleSearch" onChange={this.handleTitleInput}></input>
+      <div>
+        <i className="fa fa-search" aria-hidden="true"></i>
+        <input type="text" id="TitleSearch" onChange={this.handleTitleInput}></input>
+      </div>
     )
   }
 

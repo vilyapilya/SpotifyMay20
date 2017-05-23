@@ -1,0 +1,81 @@
+.Nav-bar{
+  position: fixed;
+  background-color: rgb(68, 68, 79);
+  height: 100%;
+  width: 200px;
+  text-align: center;
+  // color: white;
+}
+
+.Logo{
+  height: 59px;
+  width: 59px;
+  margin-top: 10%;
+  margin-left: 35%;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+  border-radius: 100px;
+}
+.YourCollection{
+  position: absolute;
+  margin-top: 60%;
+  margin-left: -50%;
+  width: 100%;
+  padding-top: 5px;
+  border-top: 1px #747E8A solid;
+  color: #DEE2EB;
+
+}
+.FriendsCollection{
+  position: absolute;
+  margin-left: -50%;
+  margin-top: 100%;
+  width: 100%;
+  padding-top: 5px;
+  border-top: 1px #747E8A solid;
+  color: #DEE2EB;
+}
+.YourCollection:hover,
+.YourCollection:active{
+  color: white;
+}
+.FriendsCollection:hover,
+.FriendsCollection:active{
+  color: white;
+}
+.fa-search{
+  position: fixed;
+  color: pink;
+  margin-top: 125px;
+  margin-left: -80px;
+  z-index: 9999;
+  font-size: 20px;
+  background-color: white;
+
+}
+.fa-search:hover{
+  font-size: 22px;
+}
+
+#TitleSearch{
+  background-color: white;
+  position: absolute;
+  margin-left: -50%;
+  margin-top: 60%;
+  width: 100%;
+  padding-top: 5px;
+  border-top: 1px #747E8A solid;
+  // color: #DEE2EB;
+  color: black;
+}
+#TitleSearch:hover{
+
+}
+#usersName{
+  position: absolute;
+  margin-top: 230%;
+  width: 100%;
+  color: #DEE2EB;
+  padding-top: 7px;
+  border-top: 1px #747E8A solid;
+}

@@ -11,20 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170517064126) do
+ActiveRecord::Schema.define(version: 20170522215636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "audiobooks", force: :cascade do |t|
-    t.string   "author",      null: false
-    t.string   "title",       null: false
+    t.string   "author",             null: false
+    t.string   "title",              null: false
     t.text     "description"
     t.string   "image_url"
-    t.string   "audio_url",   null: false
-    t.integer  "user_id",     null: false
+    t.string   "audio_url",          null: false
+    t.integer  "user_id",            null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "audio_file_name"
+    t.string   "audio_content_type"
+    t.integer  "audio_file_size"
+    t.datetime "audio_updated_at"
   end
 
   add_index "audiobooks", ["author"], name: "index_audiobooks_on_author", using: :btree

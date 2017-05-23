@@ -27,6 +27,8 @@ class BookEdit extends Component {
     this.handleDescription = this.handleDescription.bind(this);
     this.handleAudioURL = this.handleAudioURL.bind(this);
     this.upload = this.upload.bind(this);
+
+    this.slideIndex = 1;
   }
 
   handleEdit(e){
@@ -65,12 +67,10 @@ class BookEdit extends Component {
     this.setState({image_url});
   }
   upload(e){
-    debugger
     e.preventDefault();
     cloudinary.openUploadWidget(
       window.cloudinary_options,
       function(error, images){
-        debugger
         const image_url = images[0].url;
         if(error === null){
           this.setState({image_url: images[0].url});
@@ -81,37 +81,43 @@ class BookEdit extends Component {
   render(){
     return(
       <form className="createBook" onSubmit={this.handleEdit}>
-          <h1 id="addBookHeader"> Create New AudioBook </h1>
-
-          <h1 id="Title"> Title </h1>
-          <input type="text" id="EditTitle" value={this.state.title}
-            onChange={this.handleTitle} className="CreateForm">
-          </input>
+        <h1> Temporary style !!</h1>
+          <h1 id="addBookHeader"> Edit You Audiobook </h1>
+          <label>
+            <input type="text" id="EditTitle" value={this.state.title}
+              onChange={this.handleTitle} className="CreateForm" required>
+            </input>
+            <div className="label-text">test</div>
+          </label>
           <br/>
 
-          <h1 id="Desc"> description </h1>
-          <textarea id="EditDesc" value={this.state.description}
-            onChange={this.handleDescription} className="CreateForm">
-          </textarea>
-
+          <span className="DescArea">
+            <h4>Description</h4>
+            <textarea id="EditDesc" value={this.state.description}
+              onChange={this.handleDescription} className="CreateForm">
+            </textarea>
+          </span>
           <br/>
 
-          <h1 id="EditAuthorName"> Author </h1>
           <input type="text" id="EditAuthor" value={this.state.author}
-            onChange={this.handleAuthor} className="CreateForm">
+            onChange={this.handleAuthor} className="CreateForm"
+            placeholder="Author">
           </input>
           <br/>
 
-          <h1 id="AudioUrl"> AudioFile </h1>
           <input type="text" id="EditAudioURL" value={this.state.audio_url}
-            onChange={this.handleAudioURL} className="CreateForm">
+            onChange={this.handleAudioURL} className="CreateForm"
+            placeholder="AudioTemp">
           </input>
           <br/>
-          <button onClick={this.upload}>upload a different image</button>
-          <button id="bookCreateButton">
-            add audiobook
+
+          <button onClick={this.upload} className="uploadEditImg">
+            upload a different image</button>
+          <button className="bookCreateButton">
+            make changes
           </button>
-          <NavLink to="/audiobooks" id="cancel"> cancel </NavLink>
+          <NavLink to="/audiobooks" className="cancel"> cancel </NavLink>
+
     </form>
     )
   }

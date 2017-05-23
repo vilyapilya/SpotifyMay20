@@ -20,7 +20,6 @@ class BookCreate extends Component {
     cloudinary.openUploadWidget(
       window.cloudinary_options,
       function(error, images){
-        debugger
         const image_url = images[0].url;
         if(error === null){
           this.setState({image_url: images[0].url});
@@ -99,12 +98,12 @@ class BookCreate extends Component {
           </input>
           <br/>
 
-          <button id="bookCreateButton">
+          <button className="bookCreateButton">
             add audiobook
           </button>
           <button onClick={this.uploadAudio} className="uploadAudio">upload audio</button>
           <button onClick={this.upload} className="uploadImg">upload image</button>
-          <NavLink to="/audiobooks" id="cancel"> cancel </NavLink>
+          <NavLink to="/audiobooks" className="cancel"> cancel </NavLink>
     </form>
     )
   }

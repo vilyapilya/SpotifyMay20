@@ -10,7 +10,7 @@ class NavigationBar extends Component{
     return(
       <div className="Nav-bar">
         <SearchContainer></SearchContainer>
-        <NavLink to="/frontdoor" >
+        <NavLink to="/" >
           <img src="assets/book_log.jpg" className="Logo"></img>
         </NavLink>
         <NavLink to="/audiobooks" className="YourCollection"> Your collcetion </NavLink>

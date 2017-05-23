@@ -1,5 +1,5 @@
 .createBook{
-  position: fixed;
+  position: relative;
   margin-left: 30%;
   margin-bottom: 30%;
   margin-top: 5%;
@@ -35,27 +35,44 @@
   border-radius: 7px;
 }
 .uploadImg{
-  position: fixed;
-  margin-top: 50px;
-  margin-left: -200px;
+  position: absolute;
+  margin-top: 90px;
+  margin-left: -450px;
   font-size: 20px;
   color: blue;
 }
 .uploadAudio{
-  position: fixed;
-  margin-top: 20px;
-  margin-left: -200px;
+  position: absolute;
+  margin-top: 60px;
+  margin-left: -450px;
   font-size: 20px;
   color: blue;
 }
-#bookCreateButton{
+.bookCreateButton{
+  position: relative;
+  margin-right: 300px;
   border: 1px black solid;
   border-radius: 20px;
-  margin-left: -30%;
-  width: 50%;
+  width: 150px;
+  height: 40px;
+
 }
-#cancel{
+.cancel{
+  position: absolute;
+  background-color: red;
   border: 1px black solid;
   border-radius: 20px;
-  width: 500px;
+  margin-left: -130px;
+  width: 150px;
+  height: 35px;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 20px;
+}
+#addBookHeader{
+  font-size: 25px;
+}
+.DescArea{
+  display: flex;
+  justify-content: space-between;
 }

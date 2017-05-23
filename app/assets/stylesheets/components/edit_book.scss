@@ -1,0 +1,65 @@
+// label{
+//   display: block;
+//   padding-top: 20px;
+// }
+//   .label-text{
+//    transform: translateY(-15px);
+//    font-size: 20px;
+//    line-height: 20px;
+//    text-transform: uppercase;
+//
+//   }
+//   input:hover + .label-text{
+//     font-size: 13px;
+//     transform: translateY(-36px);
+//   }
+//   input:valid + .label-text{
+//     font-size: 13px;
+//     transform: translateY(-74px);
+//   }
+  // #EditTitle{
+  //   background-color: transparent;
+  //  border: 0;
+  //  border-bottom: 2px solid black;
+  //  color: green;
+  //  font-size: 36px;
+  //  letter-spacing: -1px;
+  //  outline: 0;
+  //  padding: 5px 20px;
+  //  text-align: center;
+  //  transition: all 0.3s;
+  //  width: 200px;
+  // }
+
+.uploadEditImg{
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 0px;
+  font-size: 20px;
+  color: blue;
+}
+
+// #cancel{
+//   position: absolute;
+//   height: 50px;
+//   margin-left: -235px;
+//   margin-top: 5px;
+//   width: 100%;
+//   border-radius: 50px;
+//   font-size: 30px;
+//   padding-top: 1%;
+//   background-color: #ea8585;
+// }
+#bookEditButton{
+  height: 55px;
+  margin: 10px;
+  width: 100%;
+  border-radius: 50px;
+  font-size: 30px;
+  background-color: #8DB0C4;
+}
+
+#left{
+  background-color: red;
+  margin-left: -100%;
+}

@@ -9,14 +9,14 @@
 
 }
 .show-book-desc{
-  position: absolute;
+  position: fixed;
   width: 600px;
-  margin-left: 755px;
-  margin-top: 1px;
-  font-size: 20px;
+  margin-left: 600px;
+  margin-top: 30px;
+  font-size: 25px;
   padding: 2%;
-  border: solid 1px gray;
-  border-radius: 20px;
+  // border: solid 1px gray;
+  // border-radius: 20px;
 }
 
 .show-book-title{
@@ -41,15 +41,18 @@
   display: flex;
   justify-content: space-between;
   font-size: 20px;
+  margin-top: 15%;
   margin-left: 20px;
   margin-right: 20px;
+  position: fixed;
 }
 
 .PlayButton{
+  position: fixed;
   text-align: center;
   font-size: 30px;
   margin-left: 250px;
-  margin-top: -250px;
+  margin-top: 25%;
   background-color: green;
   height: 50px;
   width: 250px;
@@ -57,30 +60,57 @@
 }
 
 .Dots{
-  position: absolute;
+  position: fixed;
+  margin-top: 26%;
   margin-left: 350px;
   width: 50px;
   text-align: center;
   font-family: inherit;
-  font-size: 40px;
-  outline:none;
-}
-.Dots:focus + .Menue{
-  background-color: green;
+  font-size: 60px;
+  cursor: pointer;
 }
 .Menue{
-  background-color: brown;
-}
-.DeleteButton{
+  display: none;
   position: absolute;
-  margin-left: 50%;
-  width: 100%;
-  background-color: pink;
+  margin-left: 100%;
+  margin-top: -100%;
+  width: 200px;
+  height: 500px;
+  background-color: rgb(68, 68, 79);
+  text-align: center;
+  font-size: 20px;
 }
+.Dots:hover .Menue{
+  display: block;
+  height: 100px;
+}
+.Dots:hover,
+.Dots:active{
+  font-size: 50px;
+  color: pink
+}
+
+.DeleteButton{
+  color: #DEE2EB;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .EditButton{
-  background-color: blue;
-  margin-left: 50%;
+  color: #DEE2EB;
+  margin-top: 10px;
 }
+
+.DeleteButton:hover,
+.DeleteButton:active{
+  color: white;
+}
+
+.EditButton:hover,
+.EditButton:active{
+  color: white;
+}
+
 .ShowImg{
   position: absolute;
   background-size: contain;
