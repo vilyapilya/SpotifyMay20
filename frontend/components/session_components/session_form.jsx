@@ -87,7 +87,8 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input type="submit" value="Submit" id="sessionSubmit"/>
+            <input type="submit" value="submit" id="sessionSubmit"/>
+            <Link to="/" className="SessionCancel">cancel</Link>
           </div>
         </form>
       </div>

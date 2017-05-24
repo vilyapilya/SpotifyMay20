@@ -1,6 +1,5 @@
 .login-form-container{
-  // position: absolute;
-  position: fixed;
+  position: absolute;
   margin-left: 30%;
   margin-bottom: 30%;
   margin-top: 5%;
@@ -49,6 +48,20 @@
   text-align: left;
   margin-left: 2%;
   border: 0px;
+}
+.SessionCancel{
+  position: absolute;
+  height: 55px;
+  margin: 10px;
+  width: 100%;
+  padding-top: 5px;
+  border-radius: 50px;
+  font-size: 30px;
+  left: 5px;
+  background-color: #bf5f75;
+}
+.SessionCancel:hover{
+  background-color: #d87d92;
 }
 #error{
   color: red;
