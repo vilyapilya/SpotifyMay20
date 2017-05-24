@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
-import { PlayButton, PauseButton, ProgressBar, SoundOnButton, SoundOffButton } from 'react-player-controls';
+import { PlayButton,
+  PauseButton,
+  ProgressBar, SoundOnButton, SoundOffButton,
+  NextButton } from 'react-player-controls';
 
 class Player extends Component {
   constructor(props){
@@ -25,14 +28,18 @@ class Player extends Component {
   unmute(){
     this.setState({volume: prevVolume});
   }
+  onEnded(){
+    console.log("popopopop");
+  }
   render () {
     if(!this.props.currentUser){
       return null;
     }
+    let audio_url = this.props.book.audioFile_url;
     return (
     <div>
         <ReactPlayer
-        url="app/assets/audio/sample.mp3"
+        url={audio_url}
         className="Player"
         height="80px"
         width="100%"
@@ -40,9 +47,8 @@ class Player extends Component {
         />
       <PauseButton onClick={this.pauseHandler}/>
       <PlayButton isEnabled={true} onClick={this.playHandler} />
+      <NextButton isEnabled={this.state.isEnabled} onClick={() => alert('Go to next')}/>
       <ProgressBar></ProgressBar>
-      <SoundOnButton onClick={this.mute}></SoundOnButton>
-      <SoundOffButton onClick={this.unmute}></SoundOffButton>
     </div>
     )
   }

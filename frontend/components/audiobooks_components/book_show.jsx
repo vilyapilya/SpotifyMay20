@@ -40,8 +40,8 @@ class BookShow extends Component{
             <div className="show-book-title">
               { this.props.book.title }
             </div>
+            <h4 id="by">by</h4>
             <div className="show-book-auth">
-              <h4 id="by">by</h4>
               { this.props.book.author}
             </div>
           </div>

@@ -17,14 +17,14 @@ import BookCreateContainer from './audiobooks_components/book_create_container';
 import BookEditContainer from './audiobooks_components/book_edit_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import PlayerContainer from './player_container';
-
+import FriendsContainer from './friends_components/friends_container';
 
 
 const App = () => (
   <div className="outer">
-
-      <PlayerContainer></PlayerContainer>
+    <PlayerContainer></PlayerContainer>
     <Switch>
+      <Route exact path="/friends" component={FriendsContainer}></Route>
       <AuthRoute exact path="/login" component={SessionFormContainer} />
       <ProtectedRoute exact path="/audiobooks" component={BooksIndexContainer} />
       <ProtectedRoute exact path="/audiobooks/:bookId" component={BookShowContainer} />

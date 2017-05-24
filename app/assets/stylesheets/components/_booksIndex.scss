@@ -4,6 +4,7 @@
   margin-top: 3%;
   margin-left: 25%;
   padding-top: 5%;
+  color: #DEE2EB;
 }
 
 .list-cont{
@@ -12,7 +13,7 @@
   float: left;
   width: 250px;
   height: 500px;
-  margin-left: 50px;
+  margin-left: 30px;
 }
 li{
   position: absolute;
@@ -37,6 +38,12 @@ li{
   height: 50px;
 
 }
+
+.clickableTitle:hover,
+.clickableTitle:active{
+  color: white
+}
+
 .inf{
   font-size: 30px;
   text-align: left;

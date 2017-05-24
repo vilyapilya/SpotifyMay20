@@ -6,7 +6,7 @@ import Root from './components/root';
 import configureStore from './store/store';
 
 //testing
-import * as APIUtil from './util/audiobooks_api_util';
+import * as APIUtil from './util/friends_util';
 import { searchBook } from './actions/audiobooks_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   //TESTING
-  window.createAudioBook = APIUtil.createAudioBook;
+  window.showF = APIUtil.showF;
   window.store = store;
   window.searchAudioBooks = APIUtil.searchAudioBooks;
   window.searchBook = searchBook;

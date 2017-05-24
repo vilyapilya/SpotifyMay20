@@ -4,9 +4,7 @@ class Api::UsersController < ApplicationController
   # end
 
   def show
-    #testing
     @user = User.find(params[:id])
-    #testing
     render :show
   end
 
@@ -19,6 +17,7 @@ class Api::UsersController < ApplicationController
       render json: @user.errors.full_messages, status: 422
     end
   end
+
 
   private
 

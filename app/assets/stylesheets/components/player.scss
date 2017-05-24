@@ -15,6 +15,7 @@
   border-style: solid;
   border-width: 15px 0 15px 30px;
   border-color: transparent transparent transparent #DEE2EB;
+  background: rgba(0,0,0, 0.0);
 }
 .PauseButton{
   position: fixed;
@@ -26,6 +27,7 @@
   height: 30px;
   border-right: 5px solid #DEE2EB;
   border-left: 5px solid #DEE2EB;
+  background: rgba(0,0,0, 0.0);
 }
 .SoundOnButton{
   position: relative;
@@ -49,7 +51,17 @@
   outline: none;
 }
 
-
+.NextButton{
+ position: fixed;
+ margin-left: 730px;
+ margin-top: 48%;
+ padding: 8px;
+ background: white;
+ border: 2px solid green;
+ border-radius: 100%;
+ outline: none;
+ z-index: 9999;
+}
 
 .ProgressBar,
 .VolumeSlider {
@@ -91,6 +103,7 @@
       .VolumeSlider-intent {
         position: absolute;
         background: rgba(0,0,0,0.05);
+
       }
     }
 
@@ -140,4 +153,5 @@
     background: #ccc;
     animation: barLoading 2s infinite;
   }
+  position: relative;
 }

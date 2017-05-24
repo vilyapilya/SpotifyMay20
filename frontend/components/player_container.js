@@ -1,9 +1,11 @@
 import { connect } from 'react-redux';
 
 import Player from './player';
+import {selectAllBooks} from '../reducers/selectors'
 
 const mapStateToProps = (state) => ({
-  bookId: state.audiobook,
+  book: state.audiobook,
+  books: selectAllBooks(state.audiobooks),
   currentUser: state.session.currentUser
 });
 

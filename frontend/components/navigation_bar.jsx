@@ -11,7 +11,7 @@ class NavigationBar extends Component{
       <div className="Nav-bar">
         <SearchContainer></SearchContainer>
         <NavLink to="/" >
-          <img src="assets/book_log.jpg" className="Logo"></img>
+          <img src="http://res.cloudinary.com/duxhobt9p/image/upload/v1495643354/book_log_toni5b.jpg" className="Logo"></img>
         </NavLink>
         <NavLink to="/audiobooks" className="YourCollection"> Your collcetion </NavLink>
         <NavLink to="frineds/audiobooks" className="FriendsCollection"> Your friends'

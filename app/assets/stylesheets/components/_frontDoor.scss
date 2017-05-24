@@ -1,11 +1,14 @@
 .frontDoor{
-  background-image: url("reading.jpg");
-  min-height: 750px;
-  background-attachment: fixed;
+  background-image: url("http://res.cloudinary.com/duxhobt9p/image/upload/v1495643347/headers_jhdgdp.jpg");
+  min-height: 500px;
+  // background-attachment: fixed;
+  top: 0px;
   background-position: static;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
 // .bg-img{
 //   // padding: 1391px, 560px;
 //   position: relative;
@@ -24,12 +27,6 @@
 //   //  background-repeat: no-repeat;
 //   //  background-size: cover;
 // }
-.style{
-  position: relative;
-  height: 200px;
-  background-color: #242426;
-}
-
 .frontDoorSignUp{
   margin-left: 37%;
   margin-top: 54%;
@@ -61,8 +58,4 @@
   // color: #7F6C88;
   font-family: 'Inconsolata', monospace;
   font-size: 39px;
-}
-
-.outer{
-  background-attachment: local;
 }

@@ -102,12 +102,11 @@ class BookCreate extends Component {
 
           <h1 id="AudioUrl"> AudioFile </h1>
 
-          <input type="file" onChange={this.updateFile}></input>
+          <input type="file" onChange={this.updateFile} className="AudioUpload"></input>
 
           <button className="bookCreateButton">
             add audiobook
           </button>
-          <button onClick={this.uploadAudio} className="uploadAudio">upload audio</button>
           <button onClick={this.upload} className="uploadImg">upload image</button>
           <NavLink to="/audiobooks" className="cancel"> cancel </NavLink>
     </form>

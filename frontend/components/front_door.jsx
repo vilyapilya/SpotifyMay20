@@ -9,7 +9,6 @@ class FrontDoor extends React.Component{
         <GreetingContainer />
         <Link to="/signup" className="frontDoorSignUp">sign up</Link>
         <div className="frontDoor"></div>
-        <div className="style"></div>
       </nav>
     );
   }

@@ -1,5 +1,6 @@
 .createBook{
-  position: relative;
+  // position: relative;
+  position: absolute;
   margin-left: 30%;
   margin-bottom: 30%;
   margin-top: 5%;
@@ -9,6 +10,7 @@
   text-align: center;
   // border: 1px black solid;
   // border-radius: 20px;
+  color: #DEE2EB;
 }
 
 .AddBook{
@@ -16,13 +18,19 @@
   margin-top: 1%;
   margin-left: 85%;
   width: 150px;
-  height: 30px;
+  height: 20px;
   padding-top: 1%;
   padding-bottom: 1%;
   text-align: center;
-  font-size: 25px;
-  border: 1px black solid;
+  font-size: 20px;
+  border: 1px solid;
   border-radius: 20px;
+  color: #DEE2EB;
+}
+.AddBook:hover,
+.AddBook:active{
+  border-color: white;
+  color: white;
 }
 .CreateForm{
   height: 50px;
@@ -41,26 +49,31 @@
   font-size: 20px;
   color: blue;
 }
-.uploadAudio{
+.AudioUpload{
   position: absolute;
   margin-top: 60px;
-  margin-left: -450px;
+  left: 25px;
   font-size: 20px;
   color: blue;
+  height: 40px;
+  width: 150px;
+}
+.AudioUpload > input{
+  background: red;
 }
 .bookCreateButton{
   position: relative;
   margin-right: 300px;
-  border: 1px black solid;
+  border: 1px #DEE2EB solid;
   border-radius: 20px;
   width: 150px;
   height: 40px;
-
+  color: #DEE2EB;
 }
 .cancel{
   position: absolute;
-  background-color: red;
-  border: 1px black solid;
+  background-color: #bf5f75;
+  border: 1px  #DEE2EB solid;
   border-radius: 20px;
   margin-left: -130px;
   width: 150px;
@@ -68,6 +81,17 @@
   text-align: center;
   padding-top: 5px;
   font-size: 20px;
+
+}
+.cancel:hover,
+.cancel:active{
+  color: white;
+  border-color: white;
+}
+.bookCreateButton:hover,
+.bokkCreateButton:active{
+  color: white;
+  border-color: white;
 }
 #addBookHeader{
   font-size: 25px;
@@ -75,4 +99,16 @@
 .DescArea{
   display: flex;
   justify-content: space-between;
+}
+.uploadImg{
+  top: 380px;
+  left: 470px;
+  text-decoration: underline;
+  //other color
+  color: #abd2e8;
+}
+
+.uploadImg:hover,
+.uploadImg:active{
+  color: white;
 }

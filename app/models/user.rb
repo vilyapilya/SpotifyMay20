@@ -7,14 +7,10 @@ class User < ActiveRecord::Base
 
   has_many :audiobooks
 
-  has_many :friend_relations,
-  primary_key: :id,
-  foreign_key: :user_id,
-  class_name: :Friend
-
-  has_many :friends,
-  through: :friend_relations,
-  source: :user
+  has_many :friends
+  has_many :friend_ids, :through => :friends
+  has_many :inverse_friendships, :class_name => "Friend", :foreign_key => "friend_id"
+  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
 
   after_initialize :ensure_session_token
 

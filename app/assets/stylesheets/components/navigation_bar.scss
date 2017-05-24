@@ -4,7 +4,7 @@
   height: 100%;
   width: 200px;
   text-align: center;
-  // color: white;
+  top: 0px;
 }
 
 .Logo{
@@ -45,31 +45,35 @@
 }
 .fa-search{
   position: fixed;
-  color: pink;
+  color: #DEE2EB;
   margin-top: 125px;
   margin-left: -80px;
   z-index: 9999;
   font-size: 20px;
-  background-color: white;
+  background-color: rgb(68, 68, 79);
 
 }
-.fa-search:hover{
-  font-size: 22px;
-}
+// .fa-search:hover{
+//   // font-size: 22px;
+//   color: white;
+// }
 
 #TitleSearch{
-  background-color: white;
   position: absolute;
   margin-left: -50%;
-  margin-top: 60%;
+  margin-top: 50%;
   width: 100%;
-  padding-top: 5px;
-  border-top: 1px #747E8A solid;
-  // color: #DEE2EB;
-  color: black;
+  // padding-top: 5px;
+  border-bottom: 2px #747E8A solid;
+  border-radius: 20px;
+  background-color: rgb(68, 68, 79);
+  color: white;
+  padding: 0px;
+  font-size: 35px;
+  height: 50px;
 }
 #TitleSearch:hover{
-
+  border-color: white;
 }
 #usersName{
   position: absolute;

@@ -77,41 +77,43 @@ class BookEdit extends Component {
         }
       }.bind(this));
   }
+  updateFile(e){
+    var file = e.currentTarget.files[0];
+    var fileReader = new FileReader();
+    fileReader.onloadend = function(){
+      this.setState({audio_url: fileReader.result, audio: file})
+    }.bind(this);
+    if (file){
+      fileReader.readAsDataURL(file);
+    }
+  }
 
   render(){
     return(
       <form className="createBook" onSubmit={this.handleEdit}>
-        <h1> Temporary style !!</h1>
           <h1 id="addBookHeader"> Edit You Audiobook </h1>
           <label>
-            <input type="text" id="EditTitle" value={this.state.title}
+            <h1 id="Title"> Title </h1>
+            <input type="text" id="AddTitle" value={this.state.title}
               onChange={this.handleTitle} className="CreateForm" required>
             </input>
-            <div className="label-text">test</div>
           </label>
           <br/>
-
-          <span className="DescArea">
-            <h4>Description</h4>
-            <textarea id="EditDesc" value={this.state.description}
+            <h1>Description</h1>
+            <textarea id="AddDesc" value={this.state.description}
               onChange={this.handleDescription} className="CreateForm">
             </textarea>
-          </span>
           <br/>
-
-          <input type="text" id="EditAuthor" value={this.state.author}
+          <h1>Author</h1>
+          <input type="text" id="AddAuthor" value={this.state.author}
             onChange={this.handleAuthor} className="CreateForm"
-            placeholder="Author">
+          >
           </input>
           <br/>
+          <h1 id="AudioUrl"> AudioFile </h1>
 
-          <input type="text" id="EditAudioURL" value={this.state.audio_url}
-            onChange={this.handleAudioURL} className="CreateForm"
-            placeholder="AudioTemp">
-          </input>
-          <br/>
-
-          <button onClick={this.upload} className="uploadEditImg">
+          <input type="file" onChange={this.updateFile} className="AudioUpload"></input>
+          <button onClick={this.upload} className="uploadImg">
             upload a different image</button>
           <button className="bookCreateButton">
             make changes
