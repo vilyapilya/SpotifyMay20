@@ -35,6 +35,7 @@ class Player extends Component {
     if(!this.props.currentUser){
       return null;
     }
+    console.log(this.props.audiobooks);
     let audio_url = this.props.book.audioFile_url;
     return (
     <div>
