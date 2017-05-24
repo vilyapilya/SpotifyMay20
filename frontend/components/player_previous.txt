@@ -1,0 +1,18 @@
+return (
+    <div>
+      <ReactPlayer
+      url={audioUrl}
+      className="Player"
+      height="80px"
+      width="100%"
+      playing={this.state.playing}
+      />
+    <PauseButton onClick={this.pauseHandler}/>
+    <PlayButton isEnabled={true} onClick={this.playHandler} />
+    <ProgressBar></ProgressBar>
+    <SoundOnButton onClick={this.mute}></SoundOnButton>
+    <SoundOffButton onClick={this.unmute}></SoundOffButton>
+  </div>
+  );
+  }
+}

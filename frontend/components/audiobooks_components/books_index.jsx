@@ -4,6 +4,7 @@ import { NavLink, Route } from 'react-router-dom';
 import BooksIndexContainer from './books_index_container';
 import BookCreateContainer from './book_create_container';
 import NavigationBar from '../navigation_bar';
+import Player from '../player';
 
 class BooksIndex extends Component {
   constructor(props){
@@ -23,6 +24,9 @@ class BooksIndex extends Component {
           <div className="clickable-img">
             <NavLink to={`/audiobooks/${book.id}`}>
               <img src={book.image_url} className="IndImg"/>
+            </NavLink>
+            <NavLink to={"/audio"}>
+              Link
             </NavLink>
           </div>
           <div className="clickableTitle">
