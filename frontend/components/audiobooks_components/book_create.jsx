@@ -35,6 +35,9 @@ class BookCreate extends Component {
     formData.append("book[audio]", this.state.audio);
     formData.append("book[author]", this.state.author);
     formData.append("book[description]", this.state.description);
+    if(this.state.image_url == ""){
+      this.state.image_url = "http://res.cloudinary.com/duxhobt9p/image/upload/v1495646684/o-livro-da-alma_dac597.jpg"
+    }
     formData.append("book[image_url]", this.state.image_url);
 
     this.props.bookCreate(formData)
@@ -99,8 +102,6 @@ class BookCreate extends Component {
             onChange={this.handleAuthor} className="CreateForm">
           </input>
           <br/>
-
-          <h1 id="AudioUrl"> AudioFile </h1>
 
           <input type="file" onChange={this.updateFile} className="AudioUpload"></input>
 
