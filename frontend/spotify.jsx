@@ -8,6 +8,7 @@ import configureStore from './store/store';
 
 //testing
 import * as APIUtil from './util/friends_util';
+import {createFriend, receiveFriend} from './actions/friends_actions'
 import { searchBook } from './actions/audiobooks_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -21,7 +22,9 @@ document.addEventListener('DOMContentLoaded', () => {
     store = configureStore();
   }
   //TESTING
-  window.showF = APIUtil.showF;
+  window.recieveFriend = APIUtil.recieveFriend;
+  window.createF = APIUtil.createF;
+  window.createFriend = createFriend;
   window.store = store;
   window.searchAudioBooks = APIUtil.searchAudioBooks;
   window.searchBook = searchBook;

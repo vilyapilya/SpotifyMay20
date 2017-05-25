@@ -34,12 +34,9 @@ class BookEdit extends Component {
   handleEdit(e){
     console.log(this.props);
     e.preventDefault();
-    // if (this.props.book.user_id === this.props.user_id) {
       this.props.editBook(this.state)
-      .then((book)=>{this.props.history.push(`/audiobooks/${this.props.user_d}`)});
-    // }else {
+      .then((book)=>{this.props.history.push(`/audiobooks/${this.props.user_id}`)});
       console.log("edit error");
-    // }
   }
 
   handleTitle(e){

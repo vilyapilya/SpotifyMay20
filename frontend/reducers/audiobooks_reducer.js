@@ -27,7 +27,6 @@ const AudiobooksReducer = (state = {},  action) => {
       delete nextState[action.audiobook.id];
       return nextState;
     case EDIT_AUDIOBOOKS:
-    debugger
       nextState = merge({}, state);
       nextState[action.audiobook.id] = action.audiobook;
       return nextState;

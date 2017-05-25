@@ -51,7 +51,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="login-form-container">
         <h2 id="header">Please {this.props.formType} or {this.navLink()}

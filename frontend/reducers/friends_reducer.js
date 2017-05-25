@@ -1,14 +1,15 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_FRIENDS } from '../actions/friends_actions';
+import { RECEIVE_FRIENDID } from '../actions/friends_actions';
 import { selectAllBooks } from './selectors';
 
 const FrinedsReducer = (state = {},  action) => {
   Object.freeze(state);
   let nextState = {};
   switch(action.type){
-    case RECEIVE_FRIEND:
-      return nextState[action.friend.id] = action.friend
+    case RECEIVE_FRIENDID:
+      return nextState[action.friend];
+
     default:
       return state;
   }

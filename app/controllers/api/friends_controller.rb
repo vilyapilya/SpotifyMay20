@@ -7,7 +7,8 @@ class Api::FriendsController < ApplicationController
   def create
     @friendship = Friend.new(friendship_params)
     if @friendship.save
-      render :show
+      @user = User.find_by_id(friendship_params[:user_id])
+      render "api/users/show"
     end
   end
 

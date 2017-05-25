@@ -1,9 +1,10 @@
-import * as APIUtil from '../util/session_api_util'
-
+import * as APIUtil from '../util/friends_util';
+import {receiveCurrentUser} from './session_actions';
 export const CREATE_FRIENDSHIP = 'CREATE_FRIENDSHIP';
 export const DESTROY_FRIENDSHIP = 'DESTROY_FRIENDSHIP';
 export const RECEIVE_FRIEND_BOOKS = 'RECEIVE_FRIEND_BOOKS';
 export const RECEIVE_FRIENDS = 'RECEIVE_FRIENDS';
+export const RECEIVE_FRIENDID = 'RECEIVE_FRIEND';
 
 
 export const createFriendship = friendship => ({
@@ -21,14 +22,14 @@ export const receiveFriend_books = books => ({
   books
 })
 
-export const recieveFriend = friend =>({
-  type: RECEIVE_FRIEND,
-  friends
+export const recieveFriendId = friend =>({
+  type: RECEIVE_FRIENDID,
+  friend
 })
 
-export const createFriend = (user_id, friend_id) => dispatch => (
-  APIUtil.createF(user_id, friend_id).then(friendship => (
-    dispatch(createFriendship(friendship))
+export const createFriend = (friendship) => dispatch => (
+  APIUtil.createF(friendship).then(user => (
+    dispatch(receiveCurrentUser(user))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
   ))
@@ -39,11 +40,5 @@ export const unfriend = (user_id, friend_id) => dispatch => (
     dispatch(destroyFriendship(friendship))
   ), err => (
     dispatch(receiveErrors(err.responseJSON))
-  ))
-);
-
-export const recieveFriend = (user_id) => dispatch => (
-  APIUtil.receiveFriend().then(friend => (
-    dispatch(recieveFriend(friend)
   ))
 );
