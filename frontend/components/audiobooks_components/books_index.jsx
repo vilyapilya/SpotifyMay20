@@ -27,6 +27,13 @@ class BooksIndex extends Component {
    if (!this.props.books) {
      console.log("No books");
    }
+   let addBookFriend = null;
+   if(this.props.currentUserId === this.props.userId){
+     addBookFriend = (<NavLink to="/create" className="AddBook"> Add Book </NavLink>);
+   }else{
+     addBookFriend = (<CreateFriendContainer friendId={this.props.userId}/>);
+   }
+
    let books = this.props.books;
     let list = books.map((book, ind)=>(
       <div className="list-cont" key={ind}>
@@ -60,8 +67,7 @@ class BooksIndex extends Component {
         <ul className="booksList">
           { list }
         </ul>
-        <NavLink to="/create" className="AddBook"> Add Book </NavLink>
-        <CreateFriendContainer friendId={this.props.userId}/>
+        {addBookFriend}
       </div>
     );
   }

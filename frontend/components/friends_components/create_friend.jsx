@@ -46,7 +46,7 @@ class CreateFriend extends Component{
       friendIds.push(f.friendId);
     })
     if (friendIds.includes(this.props.friendId)){
-      friendButton = (<h1 className="addFriend">You're friends </h1>);
+      friendButton = (<h1 className="addFriend">You're friends with</h1>);
     }else {
       friendButton = (<button onClick={this.addFriend} className="addFriend">
                       add friend
