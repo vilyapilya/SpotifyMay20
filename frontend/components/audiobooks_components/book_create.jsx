@@ -109,7 +109,7 @@ class BookCreate extends Component {
             add audiobook
           </button>
           <button onClick={this.upload} className="uploadImg">upload image</button>
-          <NavLink to="/audiobooks" className="cancel"> cancel </NavLink>
+          <NavLink to={`/audiobooks/${this.state.user_id}`} className="cancel"> cancel </NavLink>
     </form>
     )
   }

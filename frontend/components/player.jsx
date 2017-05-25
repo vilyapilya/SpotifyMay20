@@ -35,7 +35,6 @@ class Player extends Component {
       return null;
     }
     if(this.props.books > 0){
-      debugger
       let ar = [];
       this.props.book.forEach((b) => {
         ar.push(b.audioFile_url);
