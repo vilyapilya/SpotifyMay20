@@ -24,14 +24,14 @@ class BooksIndex extends Component {
 
   render(){
    if (!this.props.books) {
-     console.log("No book");
+     console.log("No books");
    }
    let books = this.props.books;
     let list = books.map((book, ind)=>(
       <div className="list-cont" key={ind}>
         <li className="book-element" >
           <div className="clickable-img">
-            <NavLink to={`/audiobooks/${book.user.id}/${book.id}`}>
+            <NavLink to={`/audiobooks/${book.user_id}/${book.id}`}>
               <img src={book.image_url} className="IndImg"/>
             </NavLink>
             <NavLink to={"/audio"}>
@@ -39,7 +39,7 @@ class BooksIndex extends Component {
             </NavLink>
           </div>
           <div className="clickableTitle">
-            <NavLink to={`/audiobooks/${book.user.id}/${book.id}`}>
+            <NavLink to={`/audiobooks/${book.user_id}/${book.id}`}>
               { book.title }
             </NavLink>
           </div>
@@ -55,7 +55,7 @@ class BooksIndex extends Component {
     ))
     return(
       <div id="out">
-        <NavigationBarContainer userId={this.props.userId}></NavigationBarContainer>
+        <NavigationBarContainer></NavigationBarContainer>
         <ul className="booksList">
           { list }
         </ul>

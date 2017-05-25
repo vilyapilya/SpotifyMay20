@@ -1,6 +1,6 @@
 import { values } from 'lodash';
 
-export const selectAllBooks = ({ books }) => {
+export const selectAllBooks = ({books}) => {
   return values(books);
 };
 

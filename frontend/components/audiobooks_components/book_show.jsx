@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, withRouter, Redirect, NavLink } from 'react-router-dom';
 import BookShowContainer from './book_show_container';
-import NavigationBar from '../navigation_bar';
+import NavigationBarContainer from '../navigation_bar_container';
 import BookEditContainer from './book_edit_container';
 import Player from '../player';
 
@@ -24,7 +24,7 @@ class BookShow extends Component{
 
   handleDelete(e, id){
     e.preventDefault();
-    if(this.props.currentUserId === this.props.book.user.id){
+    if(this.props.currentUserId === this.props.book.user_id){
       this.props.deleteBook(id)
       .then((book)=>{this.props.history.push(`/audiobooks/${this.props.book.user.id}`)});
     }else {
@@ -32,10 +32,11 @@ class BookShow extends Component{
     }
   }
   render(){
+    console.log(this.props);
     if(this.props.book){
       return (
         <div className="show-book-cont">
-          <NavigationBar></NavigationBar>
+          <NavigationBarContainer></NavigationBarContainer>
           <Player book={this.props.book}></Player>
           <div className="TitleAuth">
             <div className="img-show-cont">

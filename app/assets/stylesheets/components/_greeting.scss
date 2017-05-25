@@ -22,22 +22,23 @@
   color: #8DB0C4;
 }
 .header-button{
-  position: fixed;
-  margin-top: 1%;
-  margin-left: 87%;
-  height: 76px;
-  width: 130px;
-  font-size: 25px;
-  text-align: center;
-  color: white;
-  border-width: 0px;
-  text-decoration: underline;
+  // position: fixed;
+  //
+  // height: 76px;
+  // width: 130px;
+  // font-size: 25px;
+  // text-align: center;
+  // color: white;
+  // border-width: 0px;
+  // text-decoration: underline;
+  // color: red;
 
 }
 .buttons{
-  position: fixed;
-  margin-left: 80%;
-  padding-top: 1%;
+  position: absolute;
+  top: 80px;
+  // margin-left: 80%;
+  // padding-top: 1%;
   width: 200px;
   height: 60px;
   font-size: 25px;
