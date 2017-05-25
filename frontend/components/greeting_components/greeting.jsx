@@ -14,7 +14,7 @@ const sessionLinks = () => (
 const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group">
 
-    <NavLink to="/audiobooks" className="header-name">Hi, {currentUser.username}!
+    <NavLink to={`/audiobooks/${currentUser.id}`} className="header-name">Hi, {currentUser.username}!
     </NavLink>
     <button className="header-button" onClick={logout}>Log Out</button>
 	</hgroup>

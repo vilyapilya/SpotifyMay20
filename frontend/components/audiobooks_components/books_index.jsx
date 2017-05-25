@@ -1,9 +1,10 @@
+import FriendsModal from '../friends_modal';
 import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import BooksIndexContainer from './books_index_container';
 import BookCreateContainer from './book_create_container';
-import NavigationBar from '../navigation_bar';
+import NavigationBarContainer from '../navigation_bar_container';
 import Player from '../player';
 
 class BooksIndex extends Component {
@@ -12,17 +13,25 @@ class BooksIndex extends Component {
   }
 
   componentDidMount() {
-    const user_id = this.props.user_id;
-    this.props.fetchBooks(user_id);
+    const userId = this.props.userId;
+    this.props.fetchBooks(userId);
+  }
+  componentWillReceiveProps(newProps){
+    if(newProps.userId !== this.props.userId){
+      newProps.fetchBooks(newProps.userId);
+    }
   }
 
   render(){
+   if (!this.props.books) {
+     console.log("No book");
+   }
    let books = this.props.books;
     let list = books.map((book, ind)=>(
       <div className="list-cont" key={ind}>
         <li className="book-element" >
           <div className="clickable-img">
-            <NavLink to={`/audiobooks/${book.id}`}>
+            <NavLink to={`/audiobooks/${book.user.id}/${book.id}`}>
               <img src={book.image_url} className="IndImg"/>
             </NavLink>
             <NavLink to={"/audio"}>
@@ -30,7 +39,7 @@ class BooksIndex extends Component {
             </NavLink>
           </div>
           <div className="clickableTitle">
-            <NavLink to={`/audiobooks/${book.id}`}>
+            <NavLink to={`/audiobooks/${book.user.id}/${book.id}`}>
               { book.title }
             </NavLink>
           </div>
@@ -46,7 +55,7 @@ class BooksIndex extends Component {
     ))
     return(
       <div id="out">
-        <NavigationBar></NavigationBar>
+        <NavigationBarContainer userId={this.props.userId}></NavigationBarContainer>
         <ul className="booksList">
           { list }
         </ul>

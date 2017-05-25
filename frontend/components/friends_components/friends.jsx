@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import BooksIndex from '../audiobooks_components/books_index';
 import { values } from 'lodash';
+import { NavLink } from 'react-router-dom';
 
 class Friends extends Component{
   constructor(props){
@@ -13,25 +14,27 @@ class Friends extends Component{
   // }
 
   navigateToBooks(id){
-    <BooksIndex user_id={id}></BooksIndex>
+    <BooksIndex userId={id}></BooksIndex>
   }
 
   render(){
     if(this.props.friends){
       let friends = this.props.friends;
-      friends = values({friends});
-      console.log(friends);
-      let frList = friends[0].map((friend, ind)=>(
-        <li key={ind}>
-          { friend.username }
-        </li>
+      let frList = friends.map((friend, ind)=>(
+        <div className="friend" key={ind}>
+          <li>
+            <NavLink to={`/audiobooks/${friend.friendId}`}>
+              { friend.username }
+            </NavLink>
+          </li>
+        </div>
       ))
-
       return(
         <div className="friendsList">
           <ul>
-            {frList}
+            { frList }
           </ul>
+          <NavLink to={`/audiobooks/${this.props.currentUserId}`} className="goback">go back</NavLink>
         </div>
       )
 

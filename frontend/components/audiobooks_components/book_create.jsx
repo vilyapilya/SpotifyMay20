@@ -41,7 +41,7 @@ class BookCreate extends Component {
     formData.append("book[image_url]", this.state.image_url);
 
     this.props.bookCreate(formData)
-    .then((book)=>{this.props.history.push("/audiobooks")});
+    .then((book)=>{this.props.history.push(`/audiobooks/${this.state.user_id}`)});
   }
 
   handleTitle(e){

@@ -24,8 +24,12 @@ class BookShow extends Component{
 
   handleDelete(e, id){
     e.preventDefault();
-    this.props.deleteBook(id)
-    .then((book)=>{this.props.history.push("/audiobooks")});
+    if(this.props.currentUserId === this.props.book.user.id){
+      this.props.deleteBook(id)
+      .then((book)=>{this.props.history.push(`/audiobooks/${this.props.book.user.id}`)});
+    }else {
+      console.log("error");
+    }
   }
   render(){
     if(this.props.book){
@@ -56,7 +60,7 @@ class BookShow extends Component{
                 Delete
               </button>
               <br/>
-              <NavLink to={`/audiobooks/${this.props.book.id}/edit`}
+              <NavLink to={`/audiobooks/${this.props.book.uers_id}/${this.props.book.id}/edit`}
                 className="EditButton" key={this.props.book.id}>Edit</NavLink>
             </div>
           </div>

@@ -6,6 +6,7 @@ export const EDIT_AUDIOBOOKS = 'EDIT_AUDIOBOOK'
 export const REMOVE_AUDIOBOOK = 'REMOVE_AUDIOBOOK'
 export const ADD_AUDIOBOOK = 'ADD_AUDIOBOOK'
 export const SEARCH_AUDIOBOOKS = 'SEARCH_AUDIOBOOKS'
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const receiveAudioBooks = (audiobooks) => ({
   type: RECEIVE_AUDIOBOOKS,
@@ -36,6 +37,12 @@ export const searchAudioBooks = (audiobooks) =>({
   type: SEARCH_AUDIOBOOKS,
   audiobooks
 })
+
+export const receiveErrors = errors => ({
+  type: RECEIVE_ERRORS,
+  errors
+});
+
 
 export const searchBook = (query) => dispatch => (
   APIUtil.searchAudioBooks(query).then(books => (

@@ -14,6 +14,7 @@ class Player extends Component {
     this.pauseHandler = this.pauseHandler.bind(this);
     this.mute = this.mute.bind(this);
     this.unmute = this.mute.bind(this);
+
   }
   playHandler(){
     this.setState({playing: true, volume: 0.6});
@@ -28,23 +29,29 @@ class Player extends Component {
   unmute(){
     this.setState({volume: prevVolume});
   }
-  onEnded(){
-    console.log("popopopop");
-  }
+
   render () {
     if(!this.props.currentUser){
       return null;
     }
-    console.log(this.props.audiobooks);
+    if(this.props.books > 0){
+      debugger
+      let ar = [];
+      this.props.book.forEach((b) => {
+        ar.push(b.audioFile_url);
+      })
+      console.log(ar);
+    }
     let audio_url = this.props.book.audioFile_url;
     return (
     <div>
         <ReactPlayer
         url={audio_url}
         className="Player"
-        height="80px"
+        height="65px"
         width="100%"
         playing={this.state.playing}
+        onEnded={() => this.setState({ playing: true, url: next_url})}
         />
       <PauseButton onClick={this.pauseHandler}/>
       <PlayButton isEnabled={true} onClick={this.playHandler} />

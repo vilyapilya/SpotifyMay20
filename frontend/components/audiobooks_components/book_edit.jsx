@@ -32,38 +32,43 @@ class BookEdit extends Component {
   }
 
   handleEdit(e){
+    console.log(this.props);
     e.preventDefault();
-    this.props.editBook(this.state)
-    .then((book)=>{this.props.history.push("/audiobooks")});
+    // if (this.props.book.user_id === this.props.user_id) {
+      this.props.editBook(this.state)
+      .then((book)=>{this.props.history.push(`/audiobooks/${this.props.user_d}`)});
+    // }else {
+      console.log("edit error");
+    // }
   }
 
   handleTitle(e){
     e.preventDefault();
-    const title = document.getElementById("EditTitle").value;
+    const title = document.getElementById("AddTitle").value;
     this.setState({title});
   }
 
   handleAuthor(e){
     e.preventDefault();
-    const author = document.getElementById("EditAuthor").value;
+    const author = document.getElementById("AddAuthor").value;
     this.setState({author});
   }
 
   handleDescription(e){
     e.preventDefault();
-    const description = document.getElementById("EditDesc").value;
+    const description = document.getElementById("AddDesc").value;
     this.setState({description});
   }
 
   handleAudioURL(e){
     e.preventDefault();
-    const audio_url = document.getElementById("EditAudioURL").value;
+    const audio_url = document.getElementById("AddAudioURL").value;
     this.setState({audio_url});
   }
 
   handleImageURL(e){
     e.preventDefault();
-    const image_url = document.getElementById("EditImageURL").value;
+    const image_url = document.getElementById("AddImageURL").value;
     this.setState({image_url});
   }
   upload(e){
@@ -118,7 +123,7 @@ class BookEdit extends Component {
           <button className="bookCreateButton">
             make changes
           </button>
-          <NavLink to="/audiobooks" className="cancel"> cancel </NavLink>
+          <NavLink to={`/audiobooks/${this.props.user_id}/${this.props.book.id}`} className="cancel"> cancel </NavLink>
 
     </form>
     )

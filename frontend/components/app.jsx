@@ -24,14 +24,14 @@ const App = () => (
   <div className="outer">
     <PlayerContainer></PlayerContainer>
     <Switch>
-      <Route exact path="/friends" component={FriendsContainer}></Route>
+      <ProtectedRoute exact path={"/audiobooks/:userId/friends"} component={FriendsContainer}/>
       <AuthRoute exact path="/login" component={SessionFormContainer} />
-      <ProtectedRoute exact path="/audiobooks" component={BooksIndexContainer} />
-      <ProtectedRoute exact path="/audiobooks/:bookId" component={BookShowContainer} />
+      <ProtectedRoute exact path="/audiobooks/:userId" component={BooksIndexContainer} />
+      <ProtectedRoute exact path="/audiobooks/:userId/:bookId" component={BookShowContainer} />
       <AuthRoute exact path="/signup" component={SessionFormContainer} />
       <Route exact path="/" component={FrontDoorContainer} />
       <Route exact path="/create" component={ BookCreateContainer }/>
-      <Route path="/audiobooks/:bookId/edit" component={BookEditContainer}/>
+      <Route exact path="/audiobooks/:userId/:bookId/edit" component={BookEditContainer}/>
     </Switch>
  </div>
 );

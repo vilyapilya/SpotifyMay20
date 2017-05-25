@@ -7,7 +7,8 @@ import { selectBook } from '../../reducers/selectors';
 const mapStateToProps = (state, { match }) => {
   const bookId = parseInt(match.params.bookId);
   const book = state.audiobook;
-  return {bookId, book};
+  const currentUserId = state.session.currentUser.id
+  return {bookId, book, currentUserId};
 };
 
 const mapDispatchToProps = dispatch => ({

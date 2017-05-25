@@ -6,7 +6,9 @@ import {
   ADD_AUDIOBOOK,
   REMOVE_AUDIOBOOK,
   EDIT_AUDIOBOOKS,
-  SEARCH_AUDIOBOOKS} from '../actions/audiobooks_actions';
+  SEARCH_AUDIOBOOKS,
+  RECEIVE_ERRORS
+} from '../actions/audiobooks_actions';
 
 import { selectAllBooks } from './selectors';
 
@@ -15,10 +17,7 @@ const AudiobooksReducer = (state = {},  action) => {
   let nextState = {};
   switch(action.type){
     case RECEIVE_AUDIOBOOKS:
-      nextState = merge({}, action.audiobooks, state);
-      const books_array = selectAllBooks(action.audiobooks);
-      books_array.forEach((book) => nextState[book.id] = book);
-      return nextState;
+      return action.audiobooks;
     case ADD_AUDIOBOOK:
       nextState = merge({}, state);
       nextState[action.audiobook.id] = action.audiobook;
@@ -28,6 +27,7 @@ const AudiobooksReducer = (state = {},  action) => {
       delete nextState[action.audiobook.id];
       return nextState;
     case EDIT_AUDIOBOOKS:
+    debugger
       nextState = merge({}, state);
       nextState[action.audiobook.id] = action.audiobook;
       return nextState;
@@ -35,6 +35,9 @@ const AudiobooksReducer = (state = {},  action) => {
       nextState = action.audiobooks;
       const found_books = selectAllBooks(action.audiobooks);
       found_books.forEach((book) => nextState[book.id] = book);
+      return nextState;
+    case RECEIVE_ERRORS:
+      nextState.errors = action.errors;
       return nextState;
     default:
       return state;
