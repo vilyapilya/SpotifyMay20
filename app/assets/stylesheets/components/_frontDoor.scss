@@ -8,7 +8,21 @@
   background-size: cover;
   // filter: brightness(80%);
 }
-
+.SpeakingBook{
+  position: fixed;
+  left: 5%;
+  top: 25%;
+  background: rgba(127, 108, 136,0.7);
+  color: black;
+  font-size: 30px;
+  padding: 10px;
+  border-radius: 2px;
+  font-family: 'Inconsolata', monospace;
+  font-weight: bolder;
+}
+.SpeakingBook h1{
+  background: rgba(127, 108, 136,0.0);
+}
 
 .frontDoorSignUp{
   position: fixed;
@@ -31,4 +45,7 @@
   // color: #7F6C88;
   font-family: 'Inconsolata', monospace;
   font-size: 39px;
+}
+.Guest{
+  position: fixed;
 }

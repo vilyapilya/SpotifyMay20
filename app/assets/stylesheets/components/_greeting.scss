@@ -36,9 +36,9 @@
 }
 .buttons{
   position: absolute;
-  top: 80px;
-  // margin-left: 80%;
-  // padding-top: 1%;
+  top: 10px;
+  margin-left: 80%;
+  padding-top: 1%;
   width: 200px;
   height: 60px;
   font-size: 25px;
@@ -50,7 +50,7 @@
   position: fixed;
   margin-top: 30px;
   margin-right: 10px;
-  margin-left: -10%;
+  margin-left: 10%;
   color: black;
   background: rgba(0,0,0,0.0);
 }
