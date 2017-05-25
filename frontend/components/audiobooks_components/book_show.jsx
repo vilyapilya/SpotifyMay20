@@ -26,7 +26,7 @@ class BookShow extends Component{
     e.preventDefault();
     if(this.props.currentUserId === this.props.book.user_id){
       this.props.deleteBook(id)
-      .then((book)=>{this.props.history.push(`/audiobooks/${this.props.book.user.id}`)});
+      .then((book)=>{this.props.history.push(`/audiobooks/${this.props.book.user_id}`)});
     }else {
       console.log("error");
     }

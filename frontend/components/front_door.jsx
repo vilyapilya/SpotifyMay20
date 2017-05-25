@@ -6,17 +6,12 @@ import GreetingContainer from './greeting_components/greeting_container';
 class FrontDoor extends React.Component{
   constructor(props){
     super(props);
-    this.loginGuest = this.loginGuest.bind(this);
   }
 
-  loginGuest(e){
-    
-  }
   render(){
     return (
       <nav>
         <GreetingContainer />
-        <button onClick={this.loginGuest} className="Guest">Demo User</button>
         <span className="SpeakingBook">
           <h1>speakingBook</h1>
           <br/>

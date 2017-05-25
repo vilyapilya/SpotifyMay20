@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 const sessionLinks = () => (
 
     <div className="buttons">
-      <Link to="/login" className="loginLink" id="in">Login</Link>
+      <Link to="/login" className="loginLink">Login</Link>
       <br/>
       <Link to="/signup" className="signupLink">Sign up</Link>
     </div>
@@ -13,7 +13,6 @@ const sessionLinks = () => (
 
 const personalGreeting = (currentUser, logout) => (
 	<hgroup className="header-group">
-
     <NavLink to={`/audiobooks/${currentUser.id}`} className="header-name">Hi, {currentUser.username}!
     </NavLink>
     <button className="header-button" onClick={logout}>Log Out</button>
