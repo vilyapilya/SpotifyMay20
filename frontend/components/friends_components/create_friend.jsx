@@ -13,12 +13,12 @@ class CreateFriend extends Component{
   addFriend(e){
     e.preventDefault();
     let user_id = this.props.currentUser.id;
-    let friend_id = this.props.book.user_id;
+    let friendId = this.props.friendId;
     this.props.createFriend({user_id, friend_id});
   }
   isOwnPage(){
     let dots = null;
-    if (this.props.currentUser.id === this.props.book.user_id) {
+    if (this.props.currentUser.id === this.props.friendId) {
        dots = (
         <div className="Dots">...
           <div className="Menue">
@@ -27,7 +27,7 @@ class CreateFriend extends Component{
               Delete
             </button>
             <br/>
-            <NavLink to={`/audiobooks/${this.props.book.uers_id}/${this.props.book.id}/edit`}
+            <NavLink to={`/audiobooks/${this.props.friendId}/${this.props.book.id}/edit`}
               className="EditButton" key={this.props.book.id}>Edit</NavLink>
           </div>
         </div>
@@ -45,7 +45,7 @@ class CreateFriend extends Component{
     array.friends.forEach((f) => {
       friendIds.push(f.friendId);
     })
-    if (friendIds.includes(this.props.book.user_id)){
+    if (friendIds.includes(this.props.friendId)){
       friendButton = (<h1 className="addFriend">You're friends </h1>);
     }else {
       friendButton = (<button onClick={this.addFriend} className="addFriend">

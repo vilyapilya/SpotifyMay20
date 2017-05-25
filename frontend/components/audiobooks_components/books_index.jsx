@@ -61,7 +61,7 @@ class BooksIndex extends Component {
           { list }
         </ul>
         <NavLink to="/create" className="AddBook"> Add Book </NavLink>
-        <CreateFriendContainer/>
+        <CreateFriendContainer friendId={this.props.userId}/>
       </div>
     );
   }

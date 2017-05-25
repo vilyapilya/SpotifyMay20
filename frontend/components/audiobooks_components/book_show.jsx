@@ -78,7 +78,7 @@ class BookShow extends Component{
             </div>
           </div>
           {dots}
-          <CreateFriendContainer/>
+          <CreateFriendContainer friendId={this.props.book.user_id}/>
           <div className="show-book-desc">
             { this.props.book.description }
           </div>
