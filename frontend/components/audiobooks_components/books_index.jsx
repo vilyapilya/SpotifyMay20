@@ -6,6 +6,7 @@ import BooksIndexContainer from './books_index_container';
 import BookCreateContainer from './book_create_container';
 import NavigationBarContainer from '../navigation_bar_container';
 import Player from '../player';
+import CreateFriendContainer from '../friends_components/create_friend_container';
 
 class BooksIndex extends Component {
   constructor(props){
@@ -60,6 +61,7 @@ class BooksIndex extends Component {
           { list }
         </ul>
         <NavLink to="/create" className="AddBook"> Add Book </NavLink>
+        <CreateFriendContainer/>
       </div>
     );
   }

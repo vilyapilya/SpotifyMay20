@@ -4,15 +4,13 @@ import BookShowContainer from './book_show_container';
 import NavigationBarContainer from '../navigation_bar_container';
 import BookEditContainer from './book_edit_container';
 import Player from '../player';
+import CreateFriendContainer from '../friends_components/create_friend_container';
 
 class BookShow extends Component{
   constructor(props){
     super(props);
     this.state = {};
     this.handleDelete = this.handleDelete.bind(this);
-    this.addFriend = this.addFriend.bind(this);
-    this.isFriend = this.isFriend.bind(this);
-    this.isOwnPage = this.isOwnPage.bind(this);
   }
 
   componentDidMount(){
@@ -25,12 +23,6 @@ class BookShow extends Component{
     }
   }
 
-  addFriend(e){
-    e.preventDefault();
-    let user_id = this.props.currentUser.id;
-    let friend_id = this.props.book.user_id;
-    this.props.createFriend({user_id, friend_id});
-  }
 
   handleDelete(e, id){
     e.preventDefault();
@@ -64,30 +56,9 @@ class BookShow extends Component{
     }
   }
 
-  isFriend(){
-    let friends = this.props.currentUser.friend_inf;
-    let array = {friends};
-    let friendIds = [];
-    let friendButton = null;
-    array.friends.forEach((f) => {
-      friendIds.push(f.friendId);
-    })
-    if (friendIds.includes(this.props.book.user_id)){
-      friendButton = (<h1 className="addFriend">You're friends </h1>);
-    }else {
-      friendButton = (<button onClick={this.addFriend} className="addFriend">
-                      add friend
-                      </button>)
-    }
-    if(this.isOwnPage()){
-      friendButton = null;
-    }
-    return friendButton;
-  }
 
   render(){
     let dots = this.isOwnPage();
-    let friendButton = this.isFriend();
 
     if(this.props.book){
       return (
@@ -107,10 +78,10 @@ class BookShow extends Component{
             </div>
           </div>
           {dots}
+          <CreateFriendContainer/>
           <div className="show-book-desc">
             { this.props.book.description }
           </div>
-          {friendButton}
         </div>
       );
     }
