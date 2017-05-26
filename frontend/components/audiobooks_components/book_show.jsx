@@ -5,6 +5,7 @@ import NavigationBarContainer from '../navigation_bar_container';
 import BookEditContainer from './book_edit_container';
 import Player from '../player';
 import CreateFriendContainer from '../friends_components/create_friend_container';
+import AlertContainer from 'react-alert';
 
 class BookShow extends Component{
   constructor(props){
@@ -23,7 +24,6 @@ class BookShow extends Component{
      this.props.fetchBook(newProps.match.params.bookId);
     }
   }
-
 
   handleDelete(e, id){
     e.preventDefault();
@@ -57,13 +57,12 @@ class BookShow extends Component{
     }
   }
 
-
   render(){
     let dots = this.isOwnPage();
-
     if(this.props.book){
       return (
         <div className="show-book-cont">
+          <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
           <NavigationBarContainer></NavigationBarContainer>
           <Player book={this.props.book}></Player>
           <div className="TitleAuth">
