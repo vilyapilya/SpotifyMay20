@@ -1,9 +1,7 @@
 .Player{
   position: fixed;
   bottom: 0px;
-  // background-color: rgba(0,0,0, 0.8);
-  background-color: #29292d;
-
+  background-color: rgba(41, 41, 45, 0.7);
   text-align: center;
   z-index: 9999;
 }
@@ -31,129 +29,11 @@
   border-left: 5px solid #DEE2EB;
   background: rgba(0,0,0, 0.0);
 }
-.SoundOnButton{
-  position: relative;
-  margin-left: 10px;
-  padding: 8px;
-  background: red;
 
-  border: 2px solid green;
-  border-radius: 100%;
-  outline: none;
+.PauseButton:hover{
+  border-right: 5px solid white;
+  border-left: 5px solid white;
 }
-
-.SoundOffButton{
-  position: relative;
-  margin-left: 200px;
-  padding: 8px;
-  background: green;
-
-  border: 2px solid green;
-  border-radius: 100%;
-  outline: none;
+.PlayButton:hover{
+  border-color: transparent transparent transparent white;
 }
-
-.NextButton{
- position: fixed;
- margin-left: 730px;
- margin-top: 48%;
- padding: 8px;
- background: white;
- border: 2px solid green;
- border-radius: 100%;
- outline: none;
- z-index: 9999;
-}
-
-// .ProgressBar,
-// .VolumeSlider {
-//   z-index: 9999;
-//   position: relative;
-//   background: #DEE2EB;
-//   border-radius: 4px;
-//   top: 700px;
-//   &-elapsed,
-//   &-value {
-//     background: gray;
-//     border-radius: 4px;
-//   }
-//
-//   &-seek {
-//     position: absolute;
-//     cursor: pointer;
-//   }
-//
-//   &-handle {
-//     position: absolute;
-//     width: 16px;
-//     height: 16px;
-//     background: green;
-//     border-radius: 100%;
-//     transform: scale(0);
-//     transition: transform 0.2s;
-//   }
-//
-//   &.isSeekable,
-//   &.isEnabled {
-//     &:hover {
-//       .ProgressBar-handle,
-//       .VolumeSlider-handle {
-//         transform: scale(1);
-//       }
-//
-//       .ProgressBar-intent,
-//       .VolumeSlider-intent {
-//         position: absolute;
-//         background: rgba(0,0,0,0.05);
-//
-//       }
-//     }
-//
-//     .ProgressBar-elapsed,
-//     .VolumeSlider-value {
-//       background: green;
-//     }
-//   }
-// }
-//
-// .ProgressBar {
-//   height: 8px;
-//   margin: 10px 0;
-//
-//   &-elapsed {
-//     height: 100%;
-//   }
-//
-//   &-seek {
-//     top: -6px;
-//     right: 0;
-//     bottom: -6px;
-//     left: 0;
-//   }
-//
-//   &-handle {
-//     top: 0;
-//     margin: -4px 0 0 -8px;
-//   }
-//
-//   &.isSeekable {
-//     &:hover {
-//       .ProgressBar-handle {
-//         transform: scale(1);
-//       }
-//
-//       .ProgressBar-intent {
-//         top: 0;
-//         left: 0;
-//         height: 100%;
-//       }
-//     }
-//   }
-//
-//   &.isLoading {
-//     opacity: 0.5;
-//     background: #ccc;
-//     animation: barLoading 2s infinite;
-//   }
-//   position: relative;
-// }

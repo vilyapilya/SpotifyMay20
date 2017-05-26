@@ -82,15 +82,6 @@ class Player extends Component {
     if(!this.props.currentUser){
       return null;
     }
-    // if(this.props.books.length > 0){
-    //   this.props.books.forEach((b) => {
-    //     if(b.audio !== "/audios/original/missing.png"){
-    //       this.ar.push(b.audio);
-    //     }
-    //   })
-    // }
-    // let audio_url = this.props.book.audioFile_url;
-
     return (
     <div>
         <ReactPlayer
@@ -106,8 +97,6 @@ class Player extends Component {
         />
       <PauseButton onClick={this.pauseHandler}/>
       <PlayButton isEnabled={true} onClick={this.playHandler} />
-      <NextButton isEnabled={this.state.isEnabled} onClick={() => alert('Go to next')}/>
-      <ProgressBar></ProgressBar>
     </div>
   )
   }
