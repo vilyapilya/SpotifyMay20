@@ -31,25 +31,25 @@ class Player extends Component {
   }
 
   render () {
+    let ar = [];
     if(!this.props.currentUser){
       return null;
     }
-    if(this.props.books > 0){
-      let ar = [];
-      this.props.book.forEach((b) => {
-        ar.push(b.audioFile_url);
+    if(this.props.books.length > 0){
+      this.props.books.forEach((b) => {
+        if(b.audio !== "/audios/original/missing.png"){
+          ar.push(b.audio);
+        }
       })
-      console.log(ar);
     }
     let audio_url = this.props.book.audioFile_url;
     return (
     <div>
         <ReactPlayer
-        url={audio_url}
         className="Player"
         height="65px"
         width="100%"
-        playing={this.state.playing}
+        url={[{src: ar[0]}, {src: ar[1]}]}
         onEnded={() => this.setState({ playing: true, url: next_url})}
         />
       <PauseButton onClick={this.pauseHandler}/>
