@@ -22,6 +22,7 @@ import FriendsContainer from './friends_components/friends_container';
 
 const App = () => (
   <div className="outer">
+
     <PlayerContainer></PlayerContainer>
     <Switch>
       <ProtectedRoute exact path={"/audiobooks/:userId/friends"} component={FriendsContainer}/>

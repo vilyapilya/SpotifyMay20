@@ -20,10 +20,12 @@ li{
   border-style: solid;
   border-color: black;
   border-width: 1px;
+  border-radius: 10px;
   list-style: none;
   float: left;
   width: 250px;
   height: 300px;
+  box-shadow: 5px 5px #242426;
 }
 
 .book-element:after{
@@ -41,7 +43,8 @@ li{
 
 .clickableTitle:hover,
 .clickableTitle:active{
-  color: white
+  color: white;
+  font-size: 32px
 }
 
 .inf{
@@ -68,4 +71,14 @@ li{
   height: 100%;
   position: absolute;
   object-fit: cover;
+}
+
+.IndImg:hover,
+.IndImg:active{
+  filter: brightness(30%);
+}
+.fa-play{
+  z-index: 9999;
+  left: 10%;
+  top: 50%;
 }

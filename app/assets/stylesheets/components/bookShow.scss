@@ -68,6 +68,7 @@
 }
 .Dots:hover .Menue{
   display: block;
+  box-shadow: 5px 5px #242426;
 }
 .Dots:hover,
 .Dots:active{
@@ -102,6 +103,7 @@
   background-size: contain;
   background-color: pink;
   object-fit: cover;
+  box-shadow: 5px 5px #242426;
 }
 #by{
   position: fixed;

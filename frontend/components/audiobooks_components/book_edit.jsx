@@ -32,7 +32,6 @@ class BookEdit extends Component {
   }
 
   handleEdit(e){
-    console.log(this.props);
     e.preventDefault();
       this.props.editBook(this.state)
       .then((book)=>{this.props.history.push(`/audiobooks/${this.props.user_id}`)});

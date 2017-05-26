@@ -6,6 +6,7 @@
   width: 200px;
   text-align: center;
   top: 0px;
+  box-shadow: 2px 0px #242426;
 }
 
 .Logo{
@@ -39,10 +40,12 @@
 .YourCollection:hover,
 .YourCollection:active{
   color: white;
+  font-size: 18px;
 }
 .FriendsCollection:hover,
 .FriendsCollection:active{
   color: white;
+  font-size: 18px;
 }
 .fa-search{
   position: fixed;
