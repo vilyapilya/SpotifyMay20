@@ -7,13 +7,16 @@ class GuestButton extends Component{
     this.guestUser = this.guestUser.bind(this);
   }
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.loggedIn) {
+      this.props.history.push(`/audiobooks/${nextProps.currentUser.id}`);
+    }
+  }
+
   guestUser(e){
     e.preventDefault();
-    $.ajax({
-      method: 'POST',
-      url: '/api/session',
-      data: {user: {username: "guest", password: "password"}}
-    }).then((user) => (<Redirect to={`/audiobooks/${user.id}`}/>));
+    const user = this.state;
+    this.props.processForm({user: {username: "Guest", password: "password"}});
   };
 
   render(){

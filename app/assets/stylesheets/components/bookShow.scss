@@ -8,7 +8,6 @@
   height: 500px;
   border-color: 1px pink;
   z-index: 9999;
-
 }
 .show-book-desc{
   position: fixed;
@@ -22,21 +21,23 @@
 }
 
 .show-book-title{
+  position: fixed;
   height: 50px;
   text-align: center;
-  font-size: 28px;
+  font-size: 25px;
+  top: 60%;
 }
-.show-book-audio{
-  margin-left: 30%;
-  margin-top: 40%;
-}
+// .show-book-audio{
+//   margin-left: 30%;
+//   margin-top: 40%;
+// }
 
 .TitleAuth{
-    position: fixed;
-    margin-left: 250px;
-    margin-top: 30px;
-    width: 250px;
-    height: 450px;
+  position: fixed;
+  margin-left: 250px;
+  margin-top: 30px;
+  width: 250px;
+  height: 450px;
 }
 
 
@@ -68,7 +69,7 @@
 }
 .Dots:hover .Menue{
   display: block;
-  box-shadow: 5px 5px #242426;
+  box-shadow: 1px 1px #242426;
 }
 .Dots:hover,
 .Dots:active{
@@ -103,18 +104,12 @@
   background-size: contain;
   background-color: pink;
   object-fit: cover;
-  box-shadow: 5px 5px #242426;
 }
-#by{
-  position: fixed;
-  top: 410px;
-  left: 260px;
-  font-size: 20px
-}
+
 .show-book-auth{
   font-size: 20px;
-  left: 450px;
-  top: 430px;
+  left: 250px;
+  top: 470px;
   margin-right: 20px;
   position: fixed;
 }

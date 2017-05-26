@@ -25,7 +25,6 @@ li{
   float: left;
   width: 250px;
   height: 300px;
-  box-shadow: 5px 5px #242426;
 }
 
 .book-element:after{
@@ -34,7 +33,7 @@ li{
 }
 .clickableTitle{
   // position: absolute;
-  font-size: 30px;
+  font-size: 20px;
   text-align: left;
   margin-top: 121%;
   height: 50px;
@@ -44,11 +43,11 @@ li{
 .clickableTitle:hover,
 .clickableTitle:active{
   color: white;
-  font-size: 32px
+  font-size: 21px
 }
 
 .inf{
-  font-size: 30px;
+  font-size: 18px;
   text-align: left;
   height: 50px;
 }

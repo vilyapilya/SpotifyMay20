@@ -11,6 +11,7 @@ class BookShow extends Component{
     super(props);
     this.state = {};
     this.handleDelete = this.handleDelete.bind(this);
+    this.isOwnPage = this.isOwnPage.bind(this);
   }
 
   componentDidMount(){
@@ -45,7 +46,7 @@ class BookShow extends Component{
               Delete
             </button>
             <br/>
-            <NavLink to={`/audiobooks/${this.props.book.uers_id}/${this.props.book.id}/edit`}
+            <NavLink to={`/audiobooks/${this.props.book.user_id}/${this.props.book.id}/edit`}
               className="EditButton" key={this.props.book.id}>Edit</NavLink>
           </div>
         </div>
@@ -72,7 +73,6 @@ class BookShow extends Component{
             <div className="show-book-title">
               { this.props.book.title }
             </div>
-            <h4 id="by">by</h4>
             <div className="show-book-auth">
               { this.props.book.author}
             </div>

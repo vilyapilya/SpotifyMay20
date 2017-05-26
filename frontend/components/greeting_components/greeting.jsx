@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import GuestButton from '../guest_button';
+import GuestButtonContainer from '../guest_button_container';
 
 const sessionLinks = () => (
 
@@ -8,7 +8,7 @@ const sessionLinks = () => (
       <Link to="/login" className="loginLink">Login</Link>
       <br/>
       <Link to="/signup" className="signupLink">Sign up</Link>
-      <GuestButton></GuestButton>
+      <GuestButtonContainer></GuestButtonContainer>
     </div>
 
 );

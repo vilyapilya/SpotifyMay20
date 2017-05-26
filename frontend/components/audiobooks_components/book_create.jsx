@@ -102,9 +102,9 @@ class BookCreate extends Component {
             onChange={this.handleAuthor} className="CreateForm">
           </input>
           <br/>
-
-          <input type="file" onChange={this.updateFile} className="AudioUpload"></input>
-
+          <label htmlFor="file" className="AudioLabel"> upload audio
+            <input type="file" onChange={this.updateFile}  id="file" className="AudioUpload"></input>
+           </label>
           <button className="bookCreateButton">
             add audiobook
           </button>

@@ -6,18 +6,18 @@ class BookEdit extends Component {
   constructor(props){
     super(props);
     let id = this.props.match.params.bookId;
-    let title = this.props.match.params.title;
-    let author = this.props.match.params.author;
-    let description = this.props.match.params.description;
-    let audio_url = this.props.match.params.audio_url;
-    let image_url = this.props.match.params.image_url;
+    let title = this.props.book.title;
+    let author = this.props.book.author;
+    let description = this.props.book.description;
+    let audioFile_url = this.props.book.audioFile_url;
+    let image_url = this.props.book.image_url;
     this.user_id = parseInt(this.props.user_id);
     this.state = {
       id: id,
       title: title,
       author: author,
       description: description,
-      audio_url: audio_url,
+      audio: audioFile_url,
       image_url: image_url,
       user_id: this.user_id};
 
@@ -31,8 +31,12 @@ class BookEdit extends Component {
     this.slideIndex = 1;
   }
 
+  componentDidMount(){
+    this.props.fetchBook(this.props.bookId);
+  }
+
   handleEdit(e){
-    e.preventDefault();
+      e.preventDefault();
       this.props.editBook(this.state)
       .then((book)=>{this.props.history.push(`/audiobooks/${this.props.user_id}`)});
       console.log("edit error");
@@ -107,11 +111,13 @@ class BookEdit extends Component {
           <br/>
           <h1>Author</h1>
           <input type="text" id="AddAuthor" value={this.state.author}
-            onChange={this.handleAuthor} className="CreateForm"
-          >
+            onChange={this.handleAuthor} className="CreateForm">
           </input>
           <br/>
-          <h1 id="AudioUrl"> AudioFile </h1>
+
+          <label htmlFor="file" className="AudioLabel"> upload audio
+            <input type="file" onChange={this.updateFile}  id="file" className="AudioUpload"></input>
+          </label>
 
           <input type="file" onChange={this.updateFile} className="AudioUpload"></input>
           <button onClick={this.upload} className="uploadImg">

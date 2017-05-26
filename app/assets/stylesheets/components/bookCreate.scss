@@ -38,7 +38,7 @@
   height: 50px;
   width: 100%;
   margin: 10px;
-  font-size: 27px;
+  font-size: 20px;
   border-style: solid;
   border-color: lightgray;
   border-width: 2px;
@@ -46,22 +46,38 @@
 }
 .uploadImg{
   position: absolute;
-  margin-top: 90px;
-  margin-left: -450px;
+  margin-top: 50px;
+  margin-left: -445px;
   font-size: 20px;
   color: blue;
 }
 .AudioUpload{
-  position: absolute;
-  margin-top: 60px;
-  left: 25px;
-  font-size: 20px;
-  color: blue;
-  height: 40px;
-  width: 150px;
+
+  width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
-.AudioUpload > input{
-  background: red;
+
+.AudioLabel{
+  position: absolute;
+  top: 390px;
+  margin-left: 1px;
+  font-size: 1.26em;
+  font-weight: 700;
+  color: white;
+  background-color: rgba(0,0,0,0.0);
+  display: inline-block;
+  color: #abd2e8;
+  text-decoration: underline;
+
+}
+
+.AudioLabel:focus,
+.AudioLabel:hover {
+    color: white;
 }
 .bookCreateButton{
   position: relative;

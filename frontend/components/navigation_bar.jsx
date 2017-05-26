@@ -19,7 +19,7 @@ class NavigationBar extends Component{
         <NavLink to="/" >
           <img src="http://res.cloudinary.com/duxhobt9p/image/upload/v1495643354/book_log_toni5b.jpg" className="Logo"></img>
         </NavLink>
-        <NavLink to={`/audiobooks/${currentUserId}`} className="YourCollection"> Your collcetion </NavLink>
+        <NavLink to={`/audiobooks/${currentUserId}`} className="YourCollection"> Your collection </NavLink>
         <NavLink to={`/audiobooks/${currentUserId}/friends`}
           className="FriendsCollection"> Your friends'
            collection</NavLink>

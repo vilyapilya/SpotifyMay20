@@ -30,12 +30,16 @@ export const receiveErrors = errors => ({
   type: RECEIVE_ERRORS,
   errors
 })
+export const receiveFriendErrors = errors => ({
+  type: RECEIVE_ERRORS,
+  errors
+})
 
 export const createFriend = (friendship) => dispatch => (
   APIUtil.createF(friendship).then(user => (
     dispatch(receiveCurrentUser(user))
   ), err => (
-    dispatch(receiveErrors(err.responseJSON))
+    dispatch(receiveFriendErrors(err.responseJSON))
   ))
 );
 
@@ -43,6 +47,6 @@ export const unfriend = (user_id, friend_id) => dispatch => (
   APIUtil.destroyF(user_id, friend_id).then(friendship => (
     dispatch(destroyFriendship(friendship))
   ), err => (
-    dispatch(receiveErrors(err.responseJSON))
+    dispatch(receiveFriendErrors(err.responseJSON))
   ))
 );

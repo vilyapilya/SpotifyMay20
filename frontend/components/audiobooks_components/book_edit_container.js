@@ -9,6 +9,7 @@ const mapStateToProps = (state) =>({
   user_id: state.session.currentUser.id
 });
 const mapDispatchToProps = dispatch => ({
+  fetchBook: (id) => dispatch(fetchBook(id)),
   editBook: (book) => dispatch(editBook(book))
 });
 
