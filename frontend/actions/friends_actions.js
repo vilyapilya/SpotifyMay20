@@ -26,6 +26,10 @@ export const recieveFriendId = friend =>({
   type: RECEIVE_FRIENDID,
   friend
 })
+export const receiveErrors = errors => ({
+  type: RECEIVE_ERRORS,
+  errors
+})
 
 export const createFriend = (friendship) => dispatch => (
   APIUtil.createF(friendship).then(user => (

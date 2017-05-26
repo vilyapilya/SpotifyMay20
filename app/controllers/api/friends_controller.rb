@@ -9,6 +9,8 @@ class Api::FriendsController < ApplicationController
     if @friendship.save
       @user = User.find_by_id(friendship_params[:user_id])
       render "api/users/show"
+    else
+      render json: ["Something is wrong"], status: 422
     end
   end
 

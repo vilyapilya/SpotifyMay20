@@ -13,7 +13,7 @@ class CreateFriend extends Component{
   addFriend(e){
     e.preventDefault();
     let user_id = this.props.currentUser.id;
-    let friendId = this.props.friendId;
+    let friend_id = this.props.friendId;
     this.props.createFriend({user_id, friend_id});
   }
   isOwnPage(){
@@ -46,7 +46,7 @@ class CreateFriend extends Component{
       friendIds.push(f.friendId);
     })
     if (friendIds.includes(this.props.friendId)){
-      friendButton = (<h1 className="addFriend">You're friends with</h1>);
+      friendButton = (<h1 className="addFriend">You're friends</h1>);
     }else {
       friendButton = (<button onClick={this.addFriend} className="addFriend">
                       add friend
