@@ -16,7 +16,7 @@ class GuestButton extends Component{
   guestUser(e){
     e.preventDefault();
     const user = this.state;
-    this.props.processForm({user: {username: "Guest", password: "password"}});
+    this.props.processForm({user: {username: "guest", password: "password"}});
   };
 
   render(){
