@@ -11,6 +11,7 @@ class Api::AudiobooksController < ApplicationController
 
   def create
     @book = Audiobook.new(book_params)
+    p book_params
     if @book.save!
       render :show
     else
