@@ -10,30 +10,191 @@
   left: 50%;
   bottom: 20px;
   z-index: 9999;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 15px 0 15px 30px;
-  border-color: transparent transparent transparent #DEE2EB;
   background: rgba(0,0,0, 0.0);
+}
+.fa_play{
+
+
+}
+.fa-pause{
+
 }
 .PauseButton{
   position: fixed;
-  left: 48%;
+  left: 50%;
+  bottom: 20px;
+  z-index: 9999;
+  background: rgba(0,0,0, 0.0);
+}
+.Circle{
+  position: fixed;
+  left: 50%;
   bottom: 20px;
   z-index: 9999;
 
-  width: 4px;
-  height: 30px;
-  border-right: 5px solid #DEE2EB;
-  border-left: 5px solid #DEE2EB;
-  background: rgba(0,0,0, 0.0);
+  background-color: rgba(0,0,0,0.0);
+  border: 1px white solid;
+  text-align: center;
+  width: 28px;
+  height: 28px;
+  padding-left: 2px;
+  padding-top: 6px;
+  padding-bottom: -1px;
+  border-radius: 100%;
 }
 
-.PauseButton:hover{
-  border-right: 5px solid white;
-  border-left: 5px solid white;
+.NextButton{
+  position: fixed;
+  left: 60%;
+  bottom: 45px;
+  z-index: 9999;
 }
-.PlayButton:hover{
-  border-color: transparent transparent transparent white;
+.fa-step-forward{
+  position: fixed;
+  font-size: 16px;
+  background-color: rgba(0,0,0,0.0);
+}
+.PrevButton{
+  position: fixed;
+  margin-right: 10px;
+  bottom: 45px;
+  left: 40%;
+
+  z-index: 9999;
+}
+.fa-step-backward{
+  position: fixed;
+  font-size: 16px;
+  background-color: rgba(0,0,0,0.0);
+}
+
+
+.ProgressBar,
+.VolumeSlider {
+  position: relative;
+  background: rgba(0,0,0,0.0);
+  border-radius: 4px;
+  z-index: 9999;
+  &-elapsed,
+  &-value {
+    background: pink;
+    border-radius: 4px;
+    z-index: 9999;
+  }
+
+  &-seek {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  &-handle {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: green;
+    border-radius: 100%;
+    transform: scale(0);
+    transition: transform 0.2s;
+  }
+
+  &.isSeekable,
+  &.isEnabled {
+    &:hover {
+      .ProgressBar-handle,
+      .VolumeSlider-handle {
+        transform: scale(1);
+      }
+
+      .ProgressBar-intent,
+      .VolumeSlider-intent {
+        position: absolute;
+        background: rgba(0,0,0,0.05);
+      }
+    }
+
+    .ProgressBar-elapsed,
+    .VolumeSlider-value {
+      background: green;
+    }
+  }
+}
+
+.ProgressBar {
+  height: 8px;
+  margin: 10px 0;
+
+  &-elapsed {
+    height: 100%;
+  }
+
+  &-seek {
+    top: -6px;
+    right: 0;
+    bottom: -6px;
+    left: 0;
+  }
+
+  &-handle {
+    top: 0;
+    margin: -4px 0 0 -8px;
+  }
+
+  &.isSeekable {
+    &:hover {
+      .ProgressBar-handle {
+        transform: scale(1);
+      }
+
+      .ProgressBar-intent {
+        top: 0;
+        left: 0;
+        height: 100%;
+      }
+    }
+  }
+
+  &.isLoading {
+    opacity: 0.5;
+    background: #ccc;
+    animation: barLoading 2s infinite;
+  }
+}
+
+.VolumeSlider {
+  width: 8px;
+  height: 100px;
+  // margin: 10px 0;
+
+  &-value {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  &-seek {
+    left: -6px;
+    top: 0;
+    right: -6px;
+    bottom: 0;
+  }
+
+  &-handle {
+    left: 0;
+    margin: 0 0 -8px -4px;
+  }
+
+  &.isEnabled {
+    &:hover {
+      .VolumeSlider-handle {
+        transform: scale(1);
+      }
+
+      .VolumeSlider-intent {
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
 }

@@ -2,16 +2,29 @@ import React, { Component } from 'react';
 import ReactPlayer from 'react-player';
 import { PlayButton,
   PauseButton,
-  ProgressBar, SoundOnButton, SoundOffButton,
-  NextButton } from 'react-player-controls';
+  ProgressBar,
+  SoundOnButton,
+  SoundOffButton,
+  NextButton,
+  PrevButton
+ } from 'react-player-controls';
 
 class Player extends Component {
   constructor(props){
     super(props);
     this.preVolume = 0.0;
-    this.state = {playing: true, url: ""};
+    this.state = {playing: false,
+      url: "",
+      duration: 0,
+      played: 0,
+      playedSeconds: 0,
+      seeking: false,
+      progressFrequency: 1000};
     this.playHandler = this.playHandler.bind(this);
     this.pauseHandler = this.pauseHandler.bind(this);
+    this.nextHandler = this.nextHandler.bind(this);
+    this.prevHandler = this.prevHandler.bind(this);
+    this.onProgress = this.onProgress.bind(this);
     this.mute = this.mute.bind(this);
     this.unmute = this.mute.bind(this);
     this.goToNext = this.goToNext.bind(this);
@@ -77,10 +90,61 @@ class Player extends Component {
       console.log("nothig to play");
     }
   }
+  nextHandler(){
+    this.goToNext();
+  }
+  prevHandler(){
+    let books = this.props.books;
+    let currentUrl = this.state.url;
+    let url = "";
+    if(books){
+      for (var i = 0; i < books.length; i++) {
+        if(books[i].audio === currentUrl){
+          if(i === 0){
+            url = books[books.length-1].audio;
+          }else {
+            url = books[i-1].audio;
+          }
+          this.setState({url: url, playing: true});
+          break;
+        }
+      }
+    }
+  }
+
+  onStart(){
+    this.setState(played = Date.now);
+  }
+  onProgress(){
+    if (!this.state.seeking) {
+      let currentTime = Date.now;
+      let elapsed = currentTime - this.state.played;
+      this.setState({playedSeconds: elapsed});
+    }
+  }
+
 
   render () {
     if(!this.props.currentUser){
       return null;
+    }
+    let PlayPause = null;
+    if (this.state.playing === true) {
+      PlayPause = (
+        <PauseButton onClick={this.pauseHandler}>
+          <div className="Circle">
+            <i className="fa fa-pause" aria-hidden="true"></i>
+          </div>
+        </PauseButton>
+      )
+    }else {
+      PlayPause = (
+        <PlayButton isEnabled={true} onClick={this.playHandler}>
+          <div className="Circle">
+            <i className="fa fa-play" aria-hidden="true"></i>
+          </div>
+        </PlayButton>
+      )
     }
     return (
     <div>
@@ -92,11 +156,27 @@ class Player extends Component {
         url={this.state.url}
         playing={this.state.playing}
         onEnded={this.goToNext}
-        onStart={() => console.log('onStart')}
+        onStart={this.currentTime}
         onPause={() => this.setState({ playing: false })}
+        onDuration={duration => this.setState({ duration })}
+        onProgress={this.onProgress}
         />
-      <PauseButton onClick={this.pauseHandler}/>
-      <PlayButton isEnabled={true} onClick={this.playHandler} />
+        {PlayPause}
+      <NextButton onClick={this.nextHandler} isEnabled={true}>
+          <i className="fa fa-step-forward" aria-hidden="true"></i>
+      </NextButton>
+      <PrevButton onClick={this.prevHandler} isEnabled={true}>
+        <i className="fa fa-step-backward" aria-hidden="true"></i>
+      </PrevButton>
+      <ProgressBar
+        totalTime={this.state.duration}
+        isSeekable={true}
+        onSeek={seekTime => { /* f.i. update the time marker */}}
+        onSeekStart={seekTime => { /* perhaps freeze a video frame? */ }}
+        onSeekEnd={seekTime => { /* perform seek: */ this.state.playedSeconds = seekTime }}
+      >
+
+      </ProgressBar>
     </div>
   )
   }
