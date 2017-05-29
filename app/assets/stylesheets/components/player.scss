@@ -6,14 +6,9 @@
   z-index: 9999;
 }
 .PlayButton{
-  position: fixed;
-  left: 50%;
-  bottom: 20px;
-  z-index: 9999;
-  background: rgba(0,0,0, 0.0);
+
 }
 .fa_play{
-
 
 }
 .fa-pause{
@@ -35,11 +30,10 @@
   background-color: rgba(0,0,0,0.0);
   border: 1px white solid;
   text-align: center;
-  width: 28px;
-  height: 28px;
-  padding-left: 2px;
-  padding-top: 6px;
-  padding-bottom: -1px;
+  width: 30px;
+  height: 25px;
+  padding-top: 3px;
+  padding-left: 1px;
   border-radius: 100%;
 }
 

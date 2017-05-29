@@ -36,7 +36,7 @@ class BookCreate extends Component {
     formData.append("book[author]", this.state.author);
     formData.append("book[description]", this.state.description);
     if(this.state.image_url == ""){
-      this.state.image_url = "http://res.cloudinary.com/duxhobt9p/image/upload/v1495646684/o-livro-da-alma_dac597.jpg"
+      this.state.image_url = "http://res.cloudinary.com/duxhobt9p/image/upload/v1496014722/speaker-icon_sdzkdi.png"
     }
     formData.append("book[image_url]", this.state.image_url);
 
