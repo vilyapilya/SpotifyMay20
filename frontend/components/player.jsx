@@ -6,7 +6,8 @@ import { PlayButton,
   SoundOnButton,
   SoundOffButton,
   NextButton,
-  PrevButton
+  PrevButton,
+  TimeMarker
  } from 'react-player-controls';
 
 class Player extends Component {
@@ -168,6 +169,11 @@ class Player extends Component {
       <PrevButton onClick={this.prevHandler} isEnabled={true}>
         <i className="fa fa-step-backward" aria-hidden="true"></i>
       </PrevButton>
+      <TimeMarker
+        totalTime={this.state.duration}
+        currentTime={this.state.playedSeconds}
+        markerSeparator=" / "
+      />
       <ProgressBar
         totalTime={this.state.duration}
         isSeekable={true}

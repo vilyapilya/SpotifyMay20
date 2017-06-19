@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import BookEdit from './book_edit';
-import { editBook } from '../../actions/audiobooks_actions';
+import { editBook, fetchBook } from '../../actions/audiobooks_actions';
 import { selectBook } from '../../reducers/selectors';
 
 const mapStateToProps = (state) =>({

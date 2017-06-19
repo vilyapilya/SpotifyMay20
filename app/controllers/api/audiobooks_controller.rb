@@ -29,6 +29,7 @@ class Api::AudiobooksController < ApplicationController
   end
 
   def edit
+    debugger
     @book = Audiobook.find(params[:book][:id])
     render :show
   end
