@@ -5,6 +5,7 @@ The entire project was conceived, designed, and completed in a sctrict 10 days t
 # Features
 
 * Audiobook upload, deleted and edit.
+
   ... Users can upload audiofiles and images to create an audiobook. The
   ... application requires users to fill the title and author fields when
   ... creating an audiobook. Other fields
@@ -14,9 +15,11 @@ The entire project was conceived, designed, and completed in a sctrict 10 days t
 
 ![alt text](./public/img/readmeScreenshot.png)
 * Audiobook continuous play.
+
   ... The audiofiles are played continuously while users navigate through the site.
 
 * Search.
+
   ... Once an audiobook is uploaded to the system, it becomes visible
   ... for all users through the Search functionality. Audiobooks can be
   ... searched by their title. Using an onchange event handler, an AJAX
@@ -45,6 +48,7 @@ The entire project was conceived, designed, and completed in a sctrict 10 days t
 ```
 
  * Friending.
+
  ... Users can add friends and see the collection of the audiobooks of
  ... their friends. Friendship is represented by a self-join table. When
  ... users navigate to a friend's page, the index page displays
