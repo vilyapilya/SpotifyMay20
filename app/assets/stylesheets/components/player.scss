@@ -1,8 +1,9 @@
 .TimeMarker{
+  position: fixed;
   bottom: 20px;
   right: 10px;
-  position: absolute;
   z-index: 9999;
+  background-color: rgba(0,0,0,0.0);
 }
 
 
@@ -17,7 +18,7 @@
 
 }
 .fa_play{
-  
+
 }
 .fa-pause{
 
