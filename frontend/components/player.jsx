@@ -20,12 +20,14 @@ class Player extends Component {
       played: 0,
       playedSeconds: 0,
       seeking: false,
-      progressFrequency: 1000};
+      progressFrequency: 1000,
+    };
     this.playHandler = this.playHandler.bind(this);
     this.pauseHandler = this.pauseHandler.bind(this);
     this.nextHandler = this.nextHandler.bind(this);
     this.prevHandler = this.prevHandler.bind(this);
     this.onProgress = this.onProgress.bind(this);
+    this.onStart = this.onStart.bind(this);
     this.mute = this.mute.bind(this);
     this.unmute = this.mute.bind(this);
     this.goToNext = this.goToNext.bind(this);
@@ -68,6 +70,8 @@ class Player extends Component {
   }
 
   goToNext(){
+    this.setState({playedSeconds: 0, played: 0});
+    console.log(this.state.played);
     if(!this.props.books || this.props.books.length < 1){
       this.ind = 0;
       return null;
@@ -86,15 +90,18 @@ class Player extends Component {
     }
 
     if(count < this.props.books.length){
-      this.setState({url: this.props.books[this.ind].audio, playing: true});
+      this.setState({url: this.props.books[this.ind].audio, playing: true, played: 0});
     }else{
       console.log("nothig to play");
     }
   }
   nextHandler(){
+    console.log("next");
+    this.setState({played: 0});
     this.goToNext();
   }
   prevHandler(){
+    this.setState({playedSeconds: 0, played: 0});
     let books = this.props.books;
     let currentUrl = this.state.url;
     let url = "";
@@ -106,7 +113,7 @@ class Player extends Component {
           }else {
             url = books[i-1].audio;
           }
-          this.setState({url: url, playing: true});
+          this.setState({url: url, playing: true, played: 0});
           break;
         }
       }
@@ -114,16 +121,29 @@ class Player extends Component {
   }
 
   onStart(){
-    this.setState(played = Date.now);
-  }
-  onProgress(){
-    if (!this.state.seeking) {
-      let currentTime = Date.now;
-      let elapsed = currentTime - this.state.played;
-      this.setState({playedSeconds: elapsed});
+    let secs = this.state.played;
+    var id = setInterval(countSecs, 1000);
+    var that = this;
+    function countSecs() {
+      if (!that.state.playing){
+        clearInterval(id);
+      }else {
+        secs += 1;
+        that.setState({played: secs});
+      }
     }
   }
 
+  onProgress(){
+    this.onStart();
+    console.log("prr");
+    if (!this.state.seeking) {
+      let dur = Math.floor(this.state.duration);
+      // let elapsed = dur - this.state.played;
+      let elapsed = this.state.played;
+      this.setState({playedSeconds: elapsed});
+    }
+  }
 
   render () {
     if(!this.props.currentUser){
@@ -157,7 +177,7 @@ class Player extends Component {
         url={this.state.url}
         playing={this.state.playing}
         onEnded={this.goToNext}
-        onStart={this.currentTime}
+        onStart={this.onStart}
         onPause={() => this.setState({ playing: false })}
         onDuration={duration => this.setState({ duration })}
         onProgress={this.onProgress}
@@ -176,10 +196,11 @@ class Player extends Component {
       />
       <ProgressBar
         totalTime={this.state.duration}
+        currentTime={this.state.playedSeconds}
         isSeekable={true}
-        onSeek={seekTime => { /* f.i. update the time marker */}}
-        onSeekStart={seekTime => { /* perhaps freeze a video frame? */ }}
-        onSeekEnd={seekTime => { /* perform seek: */ this.state.playedSeconds = seekTime }}
+        onSeek={time => this.setState(() => ({ currentTime: time }))}
+        onSeekStart={time => this.setState(() => ({ lastSeekStart: time }))}
+        onSeekEnd={time => this.setState(() => ({ lastSeekEnd: time }))}
       >
 
       </ProgressBar>
