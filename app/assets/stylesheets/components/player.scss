@@ -17,7 +17,7 @@
 
 }
 .fa_play{
-
+  
 }
 .fa-pause{
 
@@ -36,7 +36,7 @@
   z-index: 9999;
 
   background-color: rgba(0,0,0,0.0);
-  border: 1px white solid;
+  border: 1px #DEE2EB solid;
   text-align: center;
   width: 30px;
   height: 25px;
@@ -84,4 +84,17 @@
     z-index: 9999;
     height: 3px;
   }
+}
+
+.PrevButton:hover,
+.NextButton:hover,
+.NextButton:active{
+  color: white;
+}
+
+.Circle:hover,
+.Circle:active{
+  width: 33px;
+  height: 28px;
+  border-color: white;
 }
