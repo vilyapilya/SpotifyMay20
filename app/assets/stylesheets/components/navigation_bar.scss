@@ -83,9 +83,20 @@
 }
 #usersName{
   position: absolute;
-  margin-top: 230%;
+  margin-top: 220%;
   width: 100%;
   color: #DEE2EB;
   padding-top: 7px;
   border-top: 1px #747E8A solid;
+}
+#logoutUser{
+  position: absolute;
+  margin-top: 280%;
+  width: 100%;
+  color: #DEE2EB;
+  padding-top: 7px;
+}
+#logoutUser:hover,
+#logoutUser:active{
+  color: white;
 }
