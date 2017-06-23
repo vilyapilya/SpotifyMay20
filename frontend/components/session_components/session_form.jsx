@@ -14,7 +14,6 @@ class SessionForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("will res");
     if (nextProps.loggedIn) {
       this.props.history.push(`/audiobooks/${nextProps.currentUser.id}`);
     }
@@ -27,8 +26,11 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    // e.preventDefault();
+    if (e){
+      e.preventDefault();
+    }
     const user = this.state;
+    console.log(user);
     this.props.processForm({user});
   }
 
@@ -54,7 +56,9 @@ class SessionForm extends React.Component {
 
   guestLogin() {
     this.setState({username: "guest", password: "password", email: "guest"});
-    this.handleSubmit();
+    if (this.state.username === "guest") {
+      this.handleSubmit();
+    }
   }
 
   render() {
