@@ -12,8 +12,8 @@ class NavigationBar extends Component{
   }
 
   logout(){
-    console.log("ppp");
     this.props.logout();
+
   }
 
   render(){

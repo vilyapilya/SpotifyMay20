@@ -10,9 +10,11 @@ class SessionForm extends React.Component {
       email: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log("will res");
     if (nextProps.loggedIn) {
       this.props.history.push(`/audiobooks/${nextProps.currentUser.id}`);
     }
@@ -48,6 +50,11 @@ class SessionForm extends React.Component {
         ))}
       </ul>
     );
+  }
+
+  guestLogin() {
+    this.setState({username: "guest", password: "password", email: "guest"});
+    this.handleSubmit();
   }
 
   render() {
@@ -87,6 +94,7 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <input type="submit" value="submit" id="sessionSubmit"/>
+            <button id="guestLogin"onClick={this.guestLogin}>Guest</button>
             <Link to="/" className="SessionCancel">cancel</Link>
           </div>
         </form>
