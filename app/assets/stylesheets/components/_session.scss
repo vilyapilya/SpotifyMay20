@@ -28,11 +28,11 @@
 }
 
 #sessionSubmit{
-  height: 55px;
+  height: 35px;
   margin: 10px;
   width: 100%;
   border-radius: 50px;
-  font-size: 30px;
+  font-size: 20px;
 
   background-color: #8DB0C4;
 }
@@ -51,17 +51,28 @@
 }
 .SessionCancel{
   position: absolute;
-  height: 55px;
+  height: 35px;
   margin: 10px;
   width: 100%;
   padding-top: 5px;
   border-radius: 50px;
-  font-size: 30px;
+  font-size: 20px;
   left: 5px;
   background-color: #bf5f75;
 }
 .SessionCancel:hover{
   background-color: #d87d92;
+}
+#guestLogin{
+  position: absolute;
+  height: 35px;
+  top: 65%;
+  width: 100%;
+  padding-top: 5px;
+  border-radius: 50px;
+  font-size: 20px;
+  left: 5px;
+  background-color: #8DB0C4;
 }
 #error{
   color: #e50d0d;
@@ -80,20 +91,9 @@
   color: #acd7ef;
 }
 
+#guestLogin:hover,
 #sessionSubmit:hover,
 #sessionSubmit:active {
   background-color: #acd7ef;
 	// box-shadow: inset 0 0 0 3px #3a7999;
-}
-#guestLogin{
-  position: fixed;
-  bottom: 1%;
-  height: 55px;
-  margin: 10px;
-  width: 100%;
-  padding-top: 5px;
-  border-radius: 50px;
-  font-size: 30px;
-  left: 5px;
-  background-color: #bf5f75;
 }

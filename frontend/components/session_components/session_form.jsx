@@ -27,7 +27,7 @@ class SessionForm extends React.Component {
   }
 
   handleSubmit(e) {
-    e.preventDefault();
+    // e.preventDefault();
     const user = this.state;
     this.props.processForm({user});
   }
@@ -94,7 +94,7 @@ class SessionForm extends React.Component {
             </label>
             <br/>
             <input type="submit" value="submit" id="sessionSubmit"/>
-            <button id="guestLogin"onClick={this.guestLogin}>Guest</button>
+            <button id="guestLogin"onClick={this.guestLogin}>continue as a guest</button>
             <Link to="/" className="SessionCancel">cancel</Link>
           </div>
         </form>
