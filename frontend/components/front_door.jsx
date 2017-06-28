@@ -1,7 +1,8 @@
 import React from 'react';
-import SessionForm from './session_components/session_form';
+
 import { Link, NavLink , Redirect } from 'react-router-dom';
 import GreetingContainer from './greeting_components/greeting_container';
+import Modal from 'react-modal';
 
 class FrontDoor extends React.Component{
   constructor(props){
