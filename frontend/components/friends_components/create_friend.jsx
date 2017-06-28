@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route, withRouter, Redirect, NavLink } from 'react-router-dom';
 
-
+const addFIconLink = "http://res.cloudinary.com/duxhobt9p/image/upload/v1498687649/add_friend-512_badl0j.png";
 class CreateFriend extends Component{
   constructor(props){
     super(props);
@@ -46,10 +46,12 @@ class CreateFriend extends Component{
       friendIds.push(f.friendId);
     })
     if (friendIds.includes(this.props.friendId)){
-      friendButton = (<h1 className="addFriend">You're friends</h1>);
+      friendButton = (<h1 className="addFriend">
+                        <i className="fa fa-check" aria-hidden="true">friends</i>
+                      </h1>);
     }else {
       friendButton = (<button onClick={this.addFriend} className="addFriend">
-                      add friend
+                        <i className="fa fa-user-plus" aria-hidden="true"></i>
                       </button>)
     }
     if(this.isOwnPage()){

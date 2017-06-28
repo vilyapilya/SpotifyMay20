@@ -47,20 +47,15 @@ ul{
 .goback:hover{
   background-color: #d87d92;
 }
-.addFriend{
+.fa-check,
+.fa-user-plus{
   z-index: 9999;
   position: fixed;
+  font-size: 35px;
   color: #DEE2EB;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: rgba(0,0,0,0.0);
-  width: 200px;
-  height: 35px;
   top: 5%;
-  right: 5%;
-  font-size: 25px;
-  border: solid 1px #DEE2EB;
-  border-radius:  20px;
-
+  right: 3%;
+}
+.fa-user-plus:hover{
+  color: white;
 }
