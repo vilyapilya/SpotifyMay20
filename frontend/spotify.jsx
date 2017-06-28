@@ -1,7 +1,7 @@
 //React
 import React from 'react';
 import ReactDOM from 'react-dom';
-const Modal = require('react-modal');
+import Modal from 'react-modal';
 //Components
 import Root from './components/root';
 import configureStore from './store/store';
@@ -30,5 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.searchBook = searchBook;
   //
   Modal.setAppElement(document.body);
+
   ReactDOM.render(<Root store={store} />, root);
 });

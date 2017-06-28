@@ -8,6 +8,8 @@ const mapStateToProps = (state, {match}) => {{
   const books = selectAllBooks(state.audiobooks);
   const currentUserId = state.session.currentUser.id;
   const userId = parseInt(match.params.userId);
+
+  const friends = state.session.currentUser.friend_inf;
   return {books, userId, currentUserId};
 }};
 

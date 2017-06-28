@@ -54,15 +54,16 @@
   margin-left: -80px;
   z-index: 9999;
   font-size: 20px;
-  // background-color: rgb(68, 68, 79);
-  // background-color: #1B1B1C;
+}
+
+.fa-times{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  width: 10px;
+  font-size: 25px;
 
 }
-// .fa-search:hover{
-//   // font-size: 22px;
-//   color: white;
-// }
-
 #TitleSearch{
   position: absolute;
   margin-left: -50%;

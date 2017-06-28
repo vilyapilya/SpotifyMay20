@@ -8,11 +8,11 @@ import NavigationBarContainer from '../navigation_bar_container';
 import Player from '../player';
 import CreateFriendContainer from '../friends_components/create_friend_container';
 
-const Modal = require('react-modal');
 
 class BooksIndex extends Component {
   constructor(props){
     super(props);
+
   }
 
   componentDidMount() {

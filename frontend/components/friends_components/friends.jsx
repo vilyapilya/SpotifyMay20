@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import BooksIndex from '../audiobooks_components/books_index';
 import { values } from 'lodash';
 import { NavLink } from 'react-router-dom';
+import Modal from 'react-modal';
 
 class Friends extends Component{
   constructor(props){
@@ -22,11 +23,11 @@ class Friends extends Component{
       let friends = this.props.friends;
       let frList = friends.map((friend, ind)=>(
         <div className="friend" key={ind}>
-          <li>
             <NavLink to={`/audiobooks/${friend.friendId}`}>
+              <li>
               { friend.username }
+              </li>
             </NavLink>
-          </li>
         </div>
       ))
       return(
@@ -34,7 +35,6 @@ class Friends extends Component{
           <ul>
             { frList }
           </ul>
-          <NavLink to={`/audiobooks/${this.props.currentUserId}`} className="goback">go back</NavLink>
         </div>
       )
 
