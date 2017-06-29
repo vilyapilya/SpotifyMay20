@@ -19,7 +19,9 @@ class BookEdit extends Component {
       description: description,
       audio: audioFile_url,
       image_url: image_url,
-      user_id: this.user_id};
+      user_id: this.user_id,
+      spinning: false
+    };
 
     this.handleEdit = this.handleEdit.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
@@ -40,6 +42,7 @@ class BookEdit extends Component {
       this.props.editBook(this.state)
       .then((book)=>{this.props.history.push(`/audiobooks/${this.props.user_id}`)});
       console.log("edit error");
+      this.setState({spinning: true});
   }
 
   handleTitle(e){
@@ -94,6 +97,16 @@ class BookEdit extends Component {
   }
 
   render(){
+    let spin;
+    let overlay;
+    if(this.state.spinning){
+      spin = (<div className="loader">Loading...</div>);
+      overlay = (<div style={formSt}></div>)
+    }else{
+      spin = null;
+      overlay = null;
+    }
+
     return(
       <form className="createBook" onSubmit={this.handleEdit}>
           <h1 id="addBookHeader"> Edit You Audiobook </h1>
@@ -126,10 +139,20 @@ class BookEdit extends Component {
             make changes
           </button>
           <NavLink to={`/audiobooks/${this.props.user_id}/${this.props.book.id}`} className="cancel"> cancel </NavLink>
-
-    </form>
+          {overlay}
+          {spin}
+  </form>
     )
   }
 
+}
+const formSt = {
+  position        : 'fixed',
+  top             : 0,
+  left            : 0,
+  right           : 0,
+  bottom          : 0,
+  backgroundColor : 'rgba(0, 0, 0, 0.3)',
+  zIndex          : 10
 }
 export default BookEdit;

@@ -78,7 +78,7 @@ const style = {
   },
   content : {
     border: '0',
-    borderRadius: '4px',
+    borderRadius: '6px',
     bottom: 'auto',
     minHeight: '10rem',
     left: '50%',
