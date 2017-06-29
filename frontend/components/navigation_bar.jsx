@@ -91,21 +91,6 @@ const style = {
     width: '50%',
     maxWidth: '60rem',
     background: '#44444f'
-
-
-
-
-
-    // position        : 'fixed',
-    // top             : '100px',
-    // left            :  '20%',
-    // right           : '70%',
-    // bottom          : '100px',
-    // border          : '1px solid #ccc',
-    // padding         : '20px',
-    // background      : '#44444f',
-    // zIndex          : 11,
-    // width           : '600px'
   }
 }
 export default NavigationBar;

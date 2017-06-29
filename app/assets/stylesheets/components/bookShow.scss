@@ -1,102 +1,51 @@
 .show-book-cont{
   position: fixed;
-  width: 100%;
+  width: 50%;
+
 }
 
 .img-show-cont{
-  width: 100%;
+  // width: 100%;
   height: 500px;
   border-color: 1px pink;
-  z-index: 9999;
+  // z-index: 9999;
 }
-.show-book-desc{
-  position: fixed;
-  width: 600px;
-  margin-left: 600px;
-  margin-top: 30px;
-  font-size: 20px;
-  padding: 2%;
-  // border: solid 1px gray;
-  // border-radius: 20px;
-}
-
-.show-book-title{
-  position: fixed;
-  height: 50px;
-  text-align: center;
-  font-size: 20px;
-  top: 60%;
-}
-// .show-book-audio{
-//   margin-left: 30%;
-//   margin-top: 40%;
-// }
 
 .TitleAuth{
+  display: flex;
   position: fixed;
-  margin-left: 250px;
-  margin-top: 30px;
+  left: 18%;
+  top: 10%;
   width: 250px;
-  height: 450px;
+  // height: 450px;
 }
-
 
 .Dots{
   position: fixed;
-  margin-top: 330px;
-  margin-left: 350px;
+  top: 50%;
+  left: 24.5%;
   width: 50px;
   text-align: center;
   font-family: inherit;
   font-size: 60px;
   cursor: pointer;
   height: 0px;
-  background: pink;
-}
-.Menue{
-  display: none;
-  position: absolute;
-  margin-left: 95%;
-  margin-top: -90%;
-  width: 200px;
-  // height: 500px;
-  background-color: rgb(68, 68, 79);
-  // background-color: #161617;
-  text-align: center;
-  font-size: 20px;
-  padding-bottom: 20px;
-  border-radius: 10px;
-}
-.Dots:hover .Menue{
-  display: block;
-  box-shadow: 1px 1px #242426;
-}
-.Dots:hover,
-.Dots:active{
-  font-size: 50px;
-  color: white
 }
 
+.EditButton,
 .DeleteButton{
+  display: flex;
   color: #DEE2EB;
-  margin-top: 10px;
+  font-size: 25px;
+  padding-left: 2%;
   margin-bottom: 10px;
 }
 
-.EditButton{
-  color: #DEE2EB;
-  margin-top: 10px;
-}
-
-.DeleteButton:hover,
-.DeleteButton:active{
-  color: white;
-}
-
 .EditButton:hover,
-.EditButton:active{
+.DeleteButton:hover{
   color: white;
 }
+
 
 .ShowImg{
   position: absolute;
@@ -105,11 +54,19 @@
   background-color: pink;
   object-fit: cover;
 }
-
+.bookInfo{
+  position: inherit;
+  width: 45%;
+  left: 40%;
+  top: 10%;
+}
 .show-book-auth{
   font-size: 20px;
-  left: 250px;
-  top: 470px;
-  margin-right: 20px;
-  position: fixed;
+}
+
+.show-book-title{
+  font-size: 30px;
+}
+.show-book-desc{
+  padding-top: 25px;
 }
