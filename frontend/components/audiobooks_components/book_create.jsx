@@ -5,8 +5,16 @@ class BookCreate extends Component {
   constructor(props){
     super(props);
     this.user_id = parseInt(this.props.user_id);
-    this.state = {title: "", author: "", description: "", audio_url: "",
-    image_url: "", user_id: this.user_id, audio: ""};
+    this.state = {
+      title: "",
+      author: "",
+      description: "",
+      audio_url: "",
+      image_url: "",
+      user_id: this.user_id,
+      audio: "",
+      spinning: false
+    };
     this.handleAdd = this.handleAdd.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
     this.handleAuthor = this.handleAuthor.bind(this);
@@ -42,6 +50,7 @@ class BookCreate extends Component {
 
     this.props.bookCreate(formData)
     .then((book)=>{this.props.history.push(`/audiobooks/${this.state.user_id}`)});
+    this.setState({spinning: true});
   }
 
   handleTitle(e){
@@ -80,6 +89,16 @@ class BookCreate extends Component {
   }
 
   render(){
+    let spin;
+    let overlay;
+    if(this.state.spinning){
+      spin = (<div className="loader">Loading...</div>);
+      overlay = (<div style={formSt}></div>)
+    }else{
+      spin = null;
+      overlay = null;
+    }
+
     return(
       <form className="createBook" onSubmit={this.handleAdd}>
           <h1 id="addBookHeader"> Create New AudioBook </h1>
@@ -110,8 +129,19 @@ class BookCreate extends Component {
           </button>
           <button onClick={this.upload} className="uploadImg">upload image</button>
           <NavLink to={`/audiobooks/${this.state.user_id}`} className="cancel"> cancel </NavLink>
-    </form>
+          {overlay}
+          {spin}
+  </form>
     )
   }
+}
+const formSt = {
+  position        : 'fixed',
+  top             : 0,
+  left            : 0,
+  right           : 0,
+  bottom          : 0,
+  backgroundColor : 'rgba(0, 0, 0, 0.3)',
+  zIndex          : 10
 }
 export default BookCreate;
