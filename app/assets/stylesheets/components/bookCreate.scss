@@ -15,19 +15,22 @@
 }
 
 .AddBook{
+  // position: relative;
+  // // width: 100px;
+  // // height: 100px;
+  // left: 95%;
+  // filter: white;
+}
+.fa-book{
   position: fixed;
-  margin-top: 3%;
-  margin-left: 85%;
-  width: 150px;
-  height: 20px;
-  padding-top: 1%;
-  padding-bottom: 20px;
-  text-align: center;
+  font-size: 50px;
+  left: 95%;
+}
+.fa-plus-circle{
+  position: fixed;
   font-size: 20px;
-  border: 1px solid;
-  border-radius: 20px;
-  color: #DEE2EB;
-  background: rgba(103, 103, 114, 0.5);
+  top: 8.5%;
+  right: 2%;
 }
 .AddBook:hover,
 .AddBook:active{
@@ -83,7 +86,7 @@
   position: relative;
   margin-right: 300px;
   border: 1px #DEE2EB solid;
-  border-radius: 20px;
+  border-radius: 2px;
   width: 150px;
   height: 40px;
   color: #DEE2EB;
@@ -92,7 +95,7 @@
   position: absolute;
   background-color: #bf5f75;
   border: 1px  #DEE2EB solid;
-  border-radius: 20px;
+  border-radius: 2px;
   margin-left: -130px;
   width: 150px;
   height: 35px;

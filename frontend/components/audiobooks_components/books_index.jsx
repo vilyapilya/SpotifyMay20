@@ -8,7 +8,7 @@ import NavigationBarContainer from '../navigation_bar_container';
 import Player from '../player';
 import CreateFriendContainer from '../friends_components/create_friend_container';
 
-
+const addIcon = "http://res.cloudinary.com/duxhobt9p/image/upload/v1498793956/add-book-more-plus-choice-128_p6mxrp.png";
 class BooksIndex extends Component {
   constructor(props){
     super(props);
@@ -31,7 +31,10 @@ class BooksIndex extends Component {
    }
    let addBookFriend = null;
    if(this.props.currentUserId === this.props.userId){
-     addBookFriend = (<NavLink to="/create" className="AddBook"> Add Book </NavLink>);
+     addBookFriend = (<NavLink to="/create" className="AddBook">
+      <i className="fa fa-book" aria-hidden="true"></i>
+      <i className="fa fa-plus-circle" aria-hidden="true"></i>
+    </NavLink>);
    }else{
      addBookFriend = (<CreateFriendContainer friendId={this.props.userId}/>);
    }
